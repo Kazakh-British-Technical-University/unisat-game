@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Levels/Level3/Scenes/Chart.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/FiraSansBlack32.tres" type="DynamicFont" id=2]
+
+[node name="Chart" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="LineContainer" type="ColorRect" parent="."]
+margin_right = 400.0
+margin_bottom = 300.0
+
+[node name="Line2D" type="Line2D" parent="LineContainer"]
+width = 2.0
+
+[node name="Title" type="Label" parent="."]
+margin_right = 400.0
+margin_bottom = 42.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "PLOT TITLE"
+align = 1
