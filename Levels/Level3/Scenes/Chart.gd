@@ -11,8 +11,6 @@ func _ready():
 	$Title.text = title
 
 func DrawLine(data):
-	#GetMinMax(data)
-	#return
 	min_x = 0
 	max_x = data.size()
 	
@@ -28,20 +26,6 @@ func DrawLine(data):
 		line.add_point(Vector2(x, height - y) + offset)
 		if i % 5 == 0:
 			yield(get_tree().create_timer(0.01),"timeout")
-
-func GetMinMax(data):
-	min_y = 100000
-	max_y = -100000
-	for i in data.size():
-		if (data[i] > max_y):
-			max_y = data[i]
-		if (data[i] < min_y):
-			min_y = data[i]
-	min_x = 0
-	max_x = data.size()
-	min_y = int ((min_y-step) / step) * step
-	max_y = int ((max_y+step) / step) * step
-	print(min_y, " ", max_y)
 
 func SetMinMax(_min_y, _max_y):
 	min_y = _min_y

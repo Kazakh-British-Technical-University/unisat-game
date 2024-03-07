@@ -10,24 +10,31 @@ func TryAssembly():
 	tween.tween_method(self, "MoveParts", 0.0, 1.0, 0.5).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_callback(self, "EndTween")
 	
-func EndTween():
+func WinScreen():
 	$WinText.visible = true
-
+	$GlowTween.StartGlow()
+	yield(get_tree().create_timer(2),"timeout")
+	get_tree().change_scene("res://Levels/Level3/Scenes/Level3.tscn")
+	
+func EndTween():
+	$Satellite/Assembled.visible = true
+	$FinalAssembly.visible = false
+	$DragManager.visible = false
+	
+	var tween = create_tween()
+	tween.tween_property($Satellite, "position", Vector2.ONE * 460, 1)
+	tween.tween_callback(self, "WinScreen")
+	
 func RearrangeParts():
 	for i in range(9, 0, -1):
 			var temp = $Sockets.get_child(i)
 			if temp.part_ref != null:
 				$DragManager.move_child(temp.part_ref, $DragManager.get_child_count() - 1)
 	$DragManager.get_child($DragManager.get_child_count() - 1).z_index = 200
-	#for i in range($DragManager.get_child_count()-1):
-	#	$DragManager.get_child(i+1).position = $Sockets.get_child(i+1).position
-	#	$DragManager.get_child(i+1).plugged_pos = $Sockets.get_child(i+1).position
-	#	$DragManager.get_child(i+1).order = i
-	
+
 func MoveParts(t : float):
 	for i in range(1, $DragManager.get_child_count()):
 		var temp : Part = $DragManager.get_child(i) as Part
-		#if temp.body_ref != null:
 		temp.position = GetPos(t, temp)
 	
 	$FinalAssembly/SolarBotIso.position = lerp(Vector2(204, 321), Vector2(204, 290), t)
@@ -51,7 +58,7 @@ func _on_Button_pressed():
 					wrongs.append(temp.part_ref)
 	
 	if correct:
-		$Button.visible = false
+		$AssembleButton.visible = false
 		TryAssembly()
 	else:
 		for i in range(wrongs.size()):

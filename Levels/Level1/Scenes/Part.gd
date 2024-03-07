@@ -38,7 +38,7 @@ func DragDone():
 				get_parent().move_child(temp.part_ref, get_parent().get_child_count())
 				print(temp.part_ref)
 	
-	$"../../Button".visible = $"../../Sockets".NumFree() == 0
+	$"../../AssembleButton".visible = $"../../Sockets".NumFree() == 0
 
 func _on_Part_area_entered(area):
 	if area.is_in_group("zone"):
