@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Levels/Level1/Sprites/Parts/frame1Iso.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Level1/Sprites/Parts/solar_top_Iso.png" type="Texture" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://Levels/Level1/Sprites/glow.png" type="Texture" id=21]
 [ext_resource path="res://Levels/Level1/GlowTween.gd" type="Script" id=22]
 [ext_resource path="res://Levels/Level1/Sprites/assembled.png" type="Texture" id=23]
+[ext_resource path="res://Fonts/RobotoRegular28.tres" type="DynamicFont" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 391, 176 )
@@ -159,18 +160,6 @@ custom_styles/focus = SubResource( 2 )
 icon = ExtResource( 8 )
 flat = true
 
-[node name="WinText" type="Label" parent="."]
-visible = false
-margin_left = 94.0
-margin_top = 632.0
-margin_right = 837.0
-margin_bottom = 861.0
-custom_fonts/font = ExtResource( 7 )
-text = "CONGRATS"
-align = 1
-valign = 1
-autowrap = true
-
 [node name="Popup" parent="." instance=ExtResource( 11 )]
 
 [node name="GlowTween" type="Tween" parent="."]
@@ -184,4 +173,25 @@ position = Vector2( 460, 460 )
 z_index = 200
 texture = ExtResource( 21 )
 
+[node name="WinText" type="Label" parent="."]
+visible = false
+margin_left = 94.0
+margin_top = 553.0
+margin_right = 837.0
+margin_bottom = 782.0
+custom_fonts/font = ExtResource( 7 )
+text = "CONGRATS"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Button" type="Button" parent="WinText"]
+margin_left = 226.0
+margin_top = 246.0
+margin_right = 505.0
+margin_bottom = 323.0
+custom_fonts/font = ExtResource( 24 )
+text = "LAUNCH"
+
 [connection signal="pressed" from="AssembleButton" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="WinText/Button" to="." method="_on_WinButton_pressed"]

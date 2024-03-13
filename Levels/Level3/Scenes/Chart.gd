@@ -26,6 +26,8 @@ func DrawLine(data):
 		line.add_point(Vector2(x, height - y) + offset)
 		if i % 5 == 0:
 			yield(get_tree().create_timer(0.01),"timeout")
+	
+	$"..".Finished()
 
 func SetMinMax(_min_y, _max_y):
 	min_y = _min_y

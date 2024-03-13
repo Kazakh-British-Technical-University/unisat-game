@@ -3,18 +3,7 @@ extends Node2D
 onready var fileName = "res://Data/test.txt"
 var max_alt = 3000
 func _ready():
-	load_file()
-	$Chart1.SetMinMax(-50, 30)
-	$Chart1.DrawLine(temp)
-	
-	$Chart2.SetMinMax(0, 70)
-	$Chart2.DrawLine(PM25)
-	
-	$Chart3.SetMinMax(0, 350)
-	$Chart3.DrawLine(PM10)
-	
-	$Chart4.SetMinMax(0, 3000)
-	$Chart4.DrawLine(altitude)
+	pass
 
 var temp = []
 var altitude = []
@@ -31,7 +20,7 @@ func load_file():
 	var f = File.new()
 	f.open(fileName, File.READ)
 	f.get_csv_line()
-	var curPhase = 0.0
+	
 	while not f.eof_reached():
 		i += 1
 		var values = Array(f.get_csv_line())
@@ -52,3 +41,27 @@ func load_file():
 			PM10.append(clamp(float(values[3]) + offset * 20, 0, 1000))
 			altitude.append(max_alt * (1 - exp(-5*float(temp.size()) / 2206.0)))
 	f.close()
+
+
+func _on_StartButton_pressed():
+	$StartPopup.visible = false
+	
+	load_file()
+	$Chart1.SetMinMax(-50, 30)
+	$Chart1.DrawLine(temp)
+	
+	$Chart2.SetMinMax(0, 70)
+	$Chart2.DrawLine(PM25)
+	
+	$Chart3.SetMinMax(0, 350)
+	$Chart3.DrawLine(PM10)
+	
+	$Chart4.SetMinMax(0, 3000)
+	$Chart4.DrawLine(altitude)
+
+func Finished():
+	$EndPopup.visible = true
+
+func _on_EndButton_pressed():
+	$QuestionPanel.visible = true
+	$EndPopup.visible = false

@@ -13,8 +13,7 @@ func TryAssembly():
 func WinScreen():
 	$WinText.visible = true
 	$GlowTween.StartGlow()
-	yield(get_tree().create_timer(2),"timeout")
-	get_tree().change_scene("res://Levels/Level3/Scenes/Level3.tscn")
+	
 	
 func EndTween():
 	$Satellite/Assembled.visible = true
@@ -66,4 +65,6 @@ func _on_Button_pressed():
 		yield(get_tree().create_timer(1),"timeout")
 		for i in range(wrongs.size()):
 			wrongs[i].modulate = Color.white
-	
+
+func _on_WinButton_pressed():
+	get_tree().change_scene("res://Levels/Level2/Level2.tscn")
