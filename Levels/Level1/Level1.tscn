@@ -30,7 +30,7 @@ extents = Vector2( 391, 176 )
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
-[node name="Lvl1_Container" type="Node2D"]
+[node name="Level1" type="Node2D"]
 script = ExtResource( 6 )
 
 [node name="Table" type="ColorRect" parent="."]
@@ -129,6 +129,7 @@ z_index = 5
 position = Vector2( 628, 563 )
 rotation = 0.523598
 z_index = 5
+preplaced = false
 
 [node name="Board1" parent="DragManager" instance=ExtResource( 17 )]
 position = Vector2( 386, 795 )

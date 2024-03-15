@@ -5,6 +5,7 @@ var initPos : Vector2
 var initAngle = 0
 var plugged_pos : Vector2
 var order = 0
+export var preplaced = true
 
 export var part_name = "antenna"
 
@@ -49,7 +50,6 @@ func _on_Part_area_entered(area):
 func _on_Part_area_exited(area):
 	if area.is_in_group("zone"):
 		$CollisionShape2D.scale = Vector2.ONE
-		print("exit: " + str($CollisionShape2D.scale))
 		rotation = initAngle
 		$PlugOut.visible = true
 		$PlugIn.visible = false
@@ -61,10 +61,22 @@ func _on_Inner_Area_body_entered(body):
 		body.Grow(true)
 		body_ref = body
 
-
 func _on_Inner_Area_body_exited(body):
 	if body.is_in_group('sockets'):
 		if body == body_ref:
 			body.occupy(false, null)
 			body_ref = null
 		body.Grow(false)
+
+func PreplacePart(body):
+	rotation = 0
+	$PlugOut.visible = false
+	$PlugIn.visible = true
+	
+	body_ref = body
+	body_ref.occupy(true, self)
+	order = 10 - body_ref.order
+	
+	$CollisionShape2D.scale = Vector2.ONE * 0.6
+	global_position = body_ref.global_position
+	plugged_pos = global_position
