@@ -1,0 +1,19 @@
+{
+  "Scenarios": [
+		{
+			"Name":"Story 1", 
+			"Description": "This is story number 1 y'all!",
+			"Difficulty": 0
+		},
+		{
+			"Name":"Story 2", 
+			"Description": "This is story number 2 y'all!",
+			"Difficulty": 1
+		},
+		{
+			"Name":"Story 3", 
+			"Description": "This is story number 3 y'all!",
+			"Difficulty": 2
+		}
+  ]
+}

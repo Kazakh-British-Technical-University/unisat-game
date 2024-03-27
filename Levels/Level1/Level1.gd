@@ -1,7 +1,19 @@
 extends Node2D
 
-func _ready():
-	PreplaceParts()
+func Start(json):
+	for obj in json["PreplacedParts"]:
+		if obj["Preplaced"]:
+			var part : Part = $DragManager.find_node(obj["PartName"]) as Part
+			
+			for j in range(1, $Sockets.get_child_count()-1):
+				var sock = $Sockets.get_child(j)
+				if part.part_name == sock.part_name and not sock.Full():
+					part.PreplacePart($Sockets.get_child(j))
+					break
+	RearrangeParts()
+
+#func _ready():
+#	PreplaceParts()
 
 func PreplaceParts():
 	for i in range(1, $DragManager.get_child_count()):
@@ -17,7 +29,7 @@ func PreplaceParts():
 func _on_Button_pressed():
 	var correct = true
 	var wrongs = []
-	for i in range(9, 0, -1):
+	for i in range(8, 0, -1):
 			var temp = $Sockets.get_child(i)
 			if temp.part_ref != null:
 				if temp.part_name != temp.part_ref.part_name:
@@ -25,9 +37,11 @@ func _on_Button_pressed():
 					wrongs.append(temp.part_ref)
 	
 	if correct:
+		global.SFX(0)
 		$AssembleButton.visible = false
 		TryAssembly()
 	else:
+		global.SFX(2)
 		for i in range(wrongs.size()):
 			wrongs[i].modulate = Color.red
 		yield(get_tree().create_timer(1),"timeout")
@@ -45,7 +59,7 @@ func TryAssembly():
 	tween.tween_callback(self, "EndTween")
 
 func RearrangeParts():
-	for i in range(9, 0, -1):
+	for i in range(8, 0, -1):
 			var temp = $Sockets.get_child(i)
 			if temp.part_ref != null:
 				$DragManager.move_child(temp.part_ref, $DragManager.get_child_count() - 1)
@@ -63,7 +77,7 @@ func MoveParts(t : float):
 	$FinalAssembly/SolarTopIso.position = lerp(Vector2(204, 60), Vector2(204, 201), t)
 
 func GetPos(t, part : Part):
-	var newPos = lerp(Vector2(166, 272), Vector2(245, 227), part.order / 8.0)
+	var newPos = lerp(Vector2(166, 272), Vector2(245, 227), part.order / 7.0)
 	return lerp(part.plugged_pos, newPos + Vector2(70, 0), t)
 
 func EndTween():
@@ -76,8 +90,10 @@ func EndTween():
 	tween.tween_callback(self, "WinScreen")
 
 func WinScreen():
+	global.SFX(3)
 	$WinText.visible = true
 	$GlowTween.StartGlow()
 
 func _on_WinButton_pressed():
-	get_tree().change_scene("res://Levels/Level2/Level2.tscn")
+	global.SFX(0)
+	get_tree().get_root().get_child(1).NextLevel()

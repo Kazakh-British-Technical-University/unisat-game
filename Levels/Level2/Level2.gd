@@ -17,4 +17,4 @@ func Fade(t):
 	$Popup.modulate.a = t
 
 func End():
-	get_tree().change_scene("res://Levels/Level3/Scenes/Level3.tscn")
+	get_tree().get_root().get_child(1).NextLevel()

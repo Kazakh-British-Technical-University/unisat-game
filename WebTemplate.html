@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Template</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script src="$GODOT_URL"></script>
+        <script>
+		
+			function fetchJSONData(path) {
+				fetch(path)
+					.then(response => response.text())
+					.then
+					((data) => 
+						{
+							//console.log("JS: " + data);
+							godotFunctions.SendToGodot(data);
+						}
+					)
+			}
+			
+			function fetchCSV(path) {
+				fetch(path)
+					.then(response => response.text())
+					.then
+					((data) => 
+						{
+							//console.log(data);
+							godotFunctions.SendCSV(data);
+						}
+					)
+			}
+			
+			window.godotFunctions = {};
+			window.externalator = {
+				addGodotFunction: (n,f) => {
+					window.godotFunctions[n] = f;
+				}
+			}
+			
+            var engine = new Engine($GODOT_CONFIG);
+            engine.startGame();
+        </script>
+    </body>
+</html>

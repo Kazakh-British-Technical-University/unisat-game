@@ -25,6 +25,7 @@ func ReturnPart():
 	tween.tween_callback(self, "DragDone")
 
 func DragDone():
+	global.SFX(1)
 	$CollisionShape2D.scale = Vector2.ONE * 0.6
 	plugged_pos = global_position
 	get_parent().inactive = false
@@ -32,7 +33,7 @@ func DragDone():
 		body_ref.occupy(true, self)
 		order = 10 - body_ref.order
 		
-		for i in range(9, 0, -1):
+		for i in range(8, 0, -1):
 			print("i = " + str(i))
 			var temp = $"../../Sockets".get_child(i)
 			if temp.part_ref != null:

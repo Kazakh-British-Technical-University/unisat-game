@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/antennaIso.png-31075e046339f298c63d962b2b8efc00.stex"
+path="res://.import/AntennaIso.png-d55992da1893e9788cef842942cc2480.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Level1/Sprites/Parts/antennaIso.png"
-dest_files=[ "res://.import/antennaIso.png-31075e046339f298c63d962b2b8efc00.stex" ]
+source_file="res://Levels/Level1/Sprites/Parts/AntennaIso.png"
+dest_files=[ "res://.import/AntennaIso.png-d55992da1893e9788cef842942cc2480.stex" ]
 
 [params]
 

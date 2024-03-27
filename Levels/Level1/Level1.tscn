@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Levels/Level1/Sprites/Parts/frame1Iso.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Level1/Sprites/Parts/solar_top_Iso.png" type="Texture" id=2]
@@ -7,16 +7,15 @@
 [ext_resource path="res://Levels/Level1/Sprites/Parts/solar_bot_Iso.png" type="Texture" id=5]
 [ext_resource path="res://Levels/Level1/Level1.gd" type="Script" id=6]
 [ext_resource path="res://Fonts/FiraSansBlack60.tres" type="DynamicFont" id=7]
-[ext_resource path="res://Levels/Level1/Sprites/assemble_button.png" type="Texture" id=8]
+[ext_resource path="res://Levels/Game/Sprites/level_button.png" type="Texture" id=8]
 [ext_resource path="res://Levels/Level1/Scenes/ExplicitParts/Bat.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Levels/Level1/Scenes/ExplicitParts/Air.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Levels/Level1/Scenes/Popup.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Levels/Level1/Scenes/ExplicitParts/Solar.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Levels/Level1/Scenes/ExplicitParts/Camera.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Levels/Level1/Scenes/ExplicitParts/TOP.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Levels/Level1/Scenes/ExplicitParts/Control.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Levels/Level1/Scenes/DragManager.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Levels/Level1/Scenes/ExplicitParts/Frame.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Levels/Level1/Scenes/ExplicitParts/Board1.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Levels/Level1/Scenes/ExplicitParts/Antenna.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Levels/Level1/Scenes/ExplodedView.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Levels/Level1/Sprites/assembly_view.png" type="Texture" id=20]
@@ -110,7 +109,7 @@ position = Vector2( 150, 753 )
 rotation = 2.54437
 z_index = 5
 
-[node name="Frame" parent="DragManager" instance=ExtResource( 16 )]
+[node name="Frame1" parent="DragManager" instance=ExtResource( 16 )]
 position = Vector2( 317, 680 )
 rotation = -0.261799
 z_index = 5
@@ -120,21 +119,11 @@ position = Vector2( 734, 548 )
 rotation = 1.0472
 z_index = 5
 
-[node name="Camera" parent="DragManager" instance=ExtResource( 13 )]
-position = Vector2( 454, 545 )
-rotation = 0.261799
-z_index = 5
-
-[node name="Bat" parent="DragManager" instance=ExtResource( 9 )]
+[node name="Battery" parent="DragManager" instance=ExtResource( 9 )]
 position = Vector2( 628, 563 )
 rotation = 0.523598
 z_index = 5
 preplaced = false
-
-[node name="Board1" parent="DragManager" instance=ExtResource( 17 )]
-position = Vector2( 386, 795 )
-rotation = -0.785397
-z_index = 5
 
 [node name="Solar" parent="DragManager" instance=ExtResource( 12 )]
 position = Vector2( 587, 766 )
@@ -151,15 +140,31 @@ position = Vector2( 739, 719 )
 rotation = 0.261799
 z_index = 5
 
+[node name="Top" parent="DragManager" instance=ExtResource( 13 )]
+position = Vector2( 383, 482 )
+rotation = 0.686322
+z_index = 5
+
 [node name="AssembleButton" type="Button" parent="."]
 visible = false
 margin_left = 654.0
 margin_top = 291.0
-margin_right = 850.0
-margin_bottom = 356.0
+margin_right = 846.0
+margin_bottom = 353.0
 custom_styles/focus = SubResource( 2 )
 icon = ExtResource( 8 )
 flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="AssembleButton"]
+margin_left = 11.0
+margin_top = 8.0
+margin_right = 177.0
+margin_bottom = 52.0
+custom_fonts/font = ExtResource( 24 )
+text = "Assemble"
+align = 1
+valign = 1
 
 [node name="Popup" parent="." instance=ExtResource( 11 )]
 
@@ -187,12 +192,24 @@ valign = 1
 autowrap = true
 
 [node name="Button" type="Button" parent="WinText"]
-margin_left = 226.0
-margin_top = 246.0
+margin_left = 235.0
+margin_top = 228.0
 margin_right = 505.0
-margin_bottom = 323.0
+margin_bottom = 312.0
 custom_fonts/font = ExtResource( 24 )
-text = "LAUNCH"
+icon = ExtResource( 8 )
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="WinText/Button"]
+margin_left = 11.0
+margin_top = 9.0
+margin_right = 259.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 24 )
+text = "Launch"
+align = 1
+valign = 1
 
 [connection signal="pressed" from="AssembleButton" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="WinText/Button" to="." method="_on_WinButton_pressed"]

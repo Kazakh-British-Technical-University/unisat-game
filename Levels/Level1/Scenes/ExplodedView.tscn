@@ -25,29 +25,25 @@ part_name = "frame"
 
 [node name="Part Slot3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 222, 229 )
-part_name = "camera"
+part_name = "top"
 
 [node name="Part Slot4" parent="." instance=ExtResource( 1 )]
 position = Vector2( 271, 203 )
 part_name = "bat"
 
 [node name="Part Slot5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 314, 176 )
-part_name = "board1"
-
-[node name="Part Slot6" parent="." instance=ExtResource( 1 )]
 position = Vector2( 361, 149 )
 part_name = "air"
 
-[node name="Part Slot7" parent="." instance=ExtResource( 1 )]
+[node name="Part Slot6" parent="." instance=ExtResource( 1 )]
 position = Vector2( 411, 120 )
 part_name = "frame"
 
-[node name="Part Slot8" parent="." instance=ExtResource( 1 )]
+[node name="Part Slot7" parent="." instance=ExtResource( 1 )]
 position = Vector2( 466, 88 )
 part_name = "control"
 
-[node name="Part Slot9" parent="." instance=ExtResource( 1 )]
+[node name="Part Slot8" parent="." instance=ExtResource( 1 )]
 position = Vector2( 509, 63 )
 part_name = "solar"
 

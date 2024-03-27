@@ -1,32 +1,55 @@
 extends ColorRect
 
+var correctAnswer = 0
 var active = true
 func _on_A_pressed():
 	if active:
-		$A.modulate = Color.aquamarine
-		EndGame()
+		if (correctAnswer == 0):
+			$A.modulate = Color.green
+		else:
+			$A.modulate = Color.red
+		
+		EndGame(correctAnswer == 0)
 
 
 func _on_B_pressed():
 	if active:
-		$B.modulate = Color.aquamarine
-		EndGame()
+		if (correctAnswer == 1):
+			$B.modulate = Color.green
+		else:
+			$B.modulate = Color.red
+			
+		EndGame(correctAnswer == 1)
 
 
 func _on_C_pressed():
 	if active:
-		$C.modulate = Color.aquamarine
-		EndGame()
+		if (correctAnswer == 2):
+			$C.modulate = Color.green
+		else:
+			$C.modulate = Color.red
+		
+		EndGame(correctAnswer == 2)
 
 func _on_D_pressed():
 	if active:
-		$D.modulate = Color.aquamarine
-		EndGame()
+		if (correctAnswer == 3):
+			$D.modulate = Color.green
+		else:
+			$D.modulate = Color.red
+		
+		EndGame(correctAnswer == 3)
 	
-func EndGame():
+func EndGame(success):
 	active = false
 	$Congrats.visible = true
-
+	if success:
+		global.SFX(3)
+		$Congrats/CongratsText.text = "Good job!"
+	else:
+		global.SFX(2)
+		$Congrats/CongratsText.text = "Try again..."
 
 func _on_EndGameButton_pressed():
-	get_tree().change_scene("res://Levels/Level1/Level1.tscn")
+	global.SFX(0)
+	get_tree().get_root().get_child(1).NextLevel()
