@@ -13,7 +13,9 @@
 			{"PartName": "Air","Preplaced": false}
 		]
 	},
-
+	
+	"Datafile": "EN_Data0",
+	
 	"DataCollection": 
 	{
 		"Altitude": 3000,

@@ -1,6 +1,5 @@
 extends Node2D
 
-var fileName = "res://Data/test.txt"
 var sensorData = []
 
 var max_alt = 3000
@@ -8,7 +7,7 @@ var max_alt = 3000
 var altitude = []
 
 func Start():
-	$Chart1.SetTitle("Altitude")
+	$Chart1.SetTitle(global.local("ALTITUDE"))
 	$Chart1.DrawLine(altitude, 100)
 	$Chart2.SetTitle(sensorData[0]["Label"])
 	$Chart2.DrawLine(sensorData[0]["Data"], 10)

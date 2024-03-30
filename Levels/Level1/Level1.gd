@@ -12,8 +12,10 @@ func Start(json):
 					break
 	RearrangeParts()
 
-#func _ready():
-#	PreplaceParts()
+func _ready():
+	$AssembleButton/Label.text = global.local("ASSEMBLE")
+	$WinText/Button/Label.text = global.local("LAUNCH")
+	$WinText.text = global.local("CONGRATS")
 
 func PreplaceParts():
 	for i in range(1, $DragManager.get_child_count()):

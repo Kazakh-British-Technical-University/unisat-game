@@ -1,6 +1,5 @@
 extends Node2D
 
-var scenarioListPath = "res://Data/ScenarioList.json"
 var curButtonNum = 0
 var buttonScene = preload("res://Levels/Level0/ScenarioButton.tscn")
 var json : Dictionary
@@ -10,6 +9,10 @@ var diffIconsPaths = 	[
 						"res://Levels/Game/Sprites/normal.png",
 						"res://Levels/Game/Sprites/hard.png"
 						]
+
+func _ready():
+	$TitleText.text = global.local("MISSIONS")
+	$Details/StartButton/Label.text = global.local("START_MISSION")
 
 func ParseJSON(parsed):
 	json = parsed
@@ -37,6 +40,7 @@ func _on_StartButton_pressed():
 	get_tree().get_root().get_child(1).StartScenario(scenarioId)
 
 func _on_CloseButton_pressed():
+	$TitleText.text = global.local("MISSIONS")
 	global.SFX(0)
 	$ScrollContainer.visible = true
 	$Details.visible = false

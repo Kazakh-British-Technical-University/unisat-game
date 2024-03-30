@@ -21,9 +21,9 @@ position = Vector2( 460, 460 )
 texture = ExtResource( 1 )
 
 [node name="Title" type="Label" parent="Window"]
-margin_left = 280.0
+margin_left = 210.0
 margin_top = 230.0
-margin_right = 640.0
+margin_right = 708.0
 margin_bottom = 271.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 5 )
@@ -36,7 +36,7 @@ position = Vector2( 317.5, 383.5 )
 scale = Vector2( 1.12209, 1.12209 )
 texture = ExtResource( 4 )
 
-[node name="Text Top" type="Label" parent="Window"]
+[node name="TextTop" type="Label" parent="Window"]
 margin_left = 436.0
 margin_top = 304.0
 margin_right = 679.0
@@ -46,7 +46,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "Lorem ipsum dolor sit amet consectetur. Vel senectus orci tortor nec. "
 autowrap = true
 
-[node name="Text Top2" type="Label" parent="Window"]
+[node name="TextTop2" type="Label" parent="Window"]
 margin_left = 229.0
 margin_top = 488.0
 margin_right = 691.0
@@ -57,10 +57,10 @@ text = "Magna tempor bibendum et dui. Venenatis egestas sed aliquet nascetur tel
 autowrap = true
 
 [node name="CloseButton" type="Button" parent="Window"]
-margin_left = 638.0
-margin_top = 205.0
-margin_right = 724.0
-margin_bottom = 281.0
+margin_left = 666.0
+margin_top = 171.0
+margin_right = 752.0
+margin_bottom = 247.0
 custom_styles/focus = SubResource( 1 )
 icon = ExtResource( 3 )
 flat = true

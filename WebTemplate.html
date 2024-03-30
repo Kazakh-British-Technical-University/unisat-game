@@ -33,6 +33,18 @@
 					)
 			}
 			
+			function fetchTrans(path) {
+				fetch(path)
+					.then(response => response.text())
+					.then
+					((data) => 
+						{
+							//console.log(data);
+							godotFunctions.SendTrans(data);
+						}
+					)
+			}
+			
 			window.godotFunctions = {};
 			window.externalator = {
 				addGodotFunction: (n,f) => {

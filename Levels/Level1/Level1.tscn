@@ -162,7 +162,7 @@ margin_top = 8.0
 margin_right = 177.0
 margin_bottom = 52.0
 custom_fonts/font = ExtResource( 24 )
-text = "Assemble"
+text = "ASSEMBLE"
 align = 1
 valign = 1
 
@@ -207,7 +207,7 @@ margin_top = 9.0
 margin_right = 259.0
 margin_bottom = 74.0
 custom_fonts/font = ExtResource( 24 )
-text = "Launch"
+text = "LAUNCH"
 align = 1
 valign = 1
 

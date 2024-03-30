@@ -11,7 +11,6 @@ func _on_A_pressed():
 		
 		EndGame(correctAnswer == 0)
 
-
 func _on_B_pressed():
 	if active:
 		if (correctAnswer == 1):
@@ -20,7 +19,6 @@ func _on_B_pressed():
 			$B.modulate = Color.red
 			
 		EndGame(correctAnswer == 1)
-
 
 func _on_C_pressed():
 	if active:
@@ -39,16 +37,17 @@ func _on_D_pressed():
 			$D.modulate = Color.red
 		
 		EndGame(correctAnswer == 3)
-	
+
 func EndGame(success):
 	active = false
 	$Congrats.visible = true
+	$Congrats/EndGameButton.text = global.local("FINISH")
 	if success:
 		global.SFX(3)
-		$Congrats/CongratsText.text = "Good job!"
+		$Congrats/CongratsText.text = global.local("CORRECT")
 	else:
 		global.SFX(2)
-		$Congrats/CongratsText.text = "Try again..."
+		$Congrats/CongratsText.text = global.local("WRONG")
 
 func _on_EndGameButton_pressed():
 	global.SFX(0)

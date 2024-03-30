@@ -68,7 +68,7 @@ margin_top = 8.0
 margin_right = 301.0
 margin_bottom = 56.0
 custom_fonts/font = ExtResource( 6 )
-text = "Start mission"
+text = "START_MISSION"
 align = 1
 valign = 1
 

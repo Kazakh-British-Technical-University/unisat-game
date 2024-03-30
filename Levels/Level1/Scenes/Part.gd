@@ -34,7 +34,7 @@ func DragDone():
 		order = 10 - body_ref.order
 		
 		for i in range(8, 0, -1):
-			print("i = " + str(i))
+			#print("i = " + str(i))
 			var temp = $"../../Sockets".get_child(i)
 			if temp.part_ref != null:
 				get_parent().move_child(temp.part_ref, get_parent().get_child_count())

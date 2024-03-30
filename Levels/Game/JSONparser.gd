@@ -8,6 +8,7 @@ var csvPath = ""
 
 var _my_js_callback = JavaScript.create_callback(self, "ProcessResponse")
 var _csv_callback = JavaScript.create_callback(self, "ProcessCSV")
+var _trans_callback = JavaScript.create_callback(self, "ProcessTrans")
 var externalator = JavaScript.get_interface("externalator")
 var window = JavaScript.get_interface("window")
 
@@ -19,6 +20,7 @@ func _ready():
 	if web:
 		externalator.addGodotFunction('SendToGodot',_my_js_callback)
 		externalator.addGodotFunction('SendCSV',_csv_callback)
+		externalator.addGodotFunction('SendTrans',_trans_callback)
 
 func LoadJSON(filename):
 	jsonPath = dataFolder + filename
@@ -55,6 +57,7 @@ func ParseJSON(json : String):
 		$"..".Result(parsed)
 	else:
 		print("JSON parse error " + jsonPath)
+
 
 
 func LoadCSV(filename):
@@ -129,3 +132,41 @@ func ExtractCSVdata(lines):
 	sensorData.append(sensor3)
 	
 	$"..".SetCSV(sensorData)
+
+
+
+func LoadTranslations():
+	if web:
+		LoadTransWeb()
+		return
+	
+	var lines = []
+	var f = File.new()
+	f.open(dataFolder + "Translations.txt", File.READ)
+	while not f.eof_reached():
+		lines.append(f.get_csv_line())
+	f.close()
+	ExtractTranslations(lines)
+
+func LoadTransWeb():
+	var webPath = dataFolder + "Translations.csv"
+	webPath.erase(0, 5)
+	webPath = "." + webPath
+	window.fetchTrans(webPath)
+
+func ProcessTrans(args):
+	var data = str(args[0])
+	var lines = data.split("\n")
+	ExtractTranslations(lines)
+	
+func ExtractTranslations(lines):
+	for i in range(1, lines.size()):
+		var line
+		if web:
+			line = lines[i].split(",")
+		else:
+			line = lines[i]
+
+		var key = line[0]
+		line.remove(0)
+		global.dict[key] = line
