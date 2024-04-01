@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Levels/Level3/Scenes/Chart.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Level3/Scenes/Level3.gd" type="Script" id=2]
@@ -7,10 +7,14 @@
 [ext_resource path="res://Levels/Level3/Sprites/analysis_BG.png" type="Texture" id=5]
 [ext_resource path="res://Levels/Level3/Sprites/slider_handle.png" type="Texture" id=6]
 [ext_resource path="res://Levels/Level3/Sprites/slider_bar.png" type="Texture" id=7]
+[ext_resource path="res://Levels/Level3/Sprites/question_panel.png" type="Texture" id=8]
+[ext_resource path="res://Fonts/RobotoRegular25.tres" type="DynamicFont" id=9]
+[ext_resource path="res://Levels/Level3/Sprites/answer_frame.png" type="Texture" id=10]
+[ext_resource path="res://Fonts/FiraSansBlack18.tres" type="DynamicFont" id=11]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 7 )
-region_rect = Rect2( 0, 0, 879, 27 )
+region_rect = Rect2( 0, 0, 900, 10 )
 
 [sub_resource type="StyleBoxEmpty" id=3]
 
@@ -20,6 +24,9 @@ region_rect = Rect2( 0, 0, 879, 27 )
 
 [node name="Level3" type="Node2D"]
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_vertical_guides_": [ 460.0 ]
+}
 
 [node name="AnalysisBg" type="Sprite" parent="."]
 position = Vector2( 460, 460 )
@@ -41,10 +48,10 @@ step = 50
 
 [node name="Slider" type="HSlider" parent="."]
 visible = false
-margin_left = 21.0
-margin_top = 594.0
-margin_right = 900.0
-margin_bottom = 673.0
+margin_left = 11.0
+margin_top = 623.0
+margin_right = 911.0
+margin_bottom = 647.0
 custom_icons/grabber_highlight = ExtResource( 6 )
 custom_icons/grabber = ExtResource( 6 )
 custom_styles/slider = SubResource( 1 )
@@ -53,78 +60,111 @@ custom_styles/grabber_area = SubResource( 2 )
 max_value = 1.0
 step = 0.001
 
-[node name="QuestionPanel" type="ColorRect" parent="."]
+[node name="QuestionPanel" type="Sprite" parent="."]
 visible = false
-margin_left = 32.0
-margin_top = 659.0
-margin_right = 903.0
-margin_bottom = 908.0
-color = Color( 0.317647, 0.827451, 0.894118, 1 )
+position = Vector2( 460, 781 )
+texture = ExtResource( 8 )
 script = ExtResource( 3 )
 
 [node name="A" type="Button" parent="QuestionPanel"]
-margin_left = 48.0
-margin_top = 114.0
-margin_right = 411.0
-margin_bottom = 165.0
+margin_left = -345.0
+margin_top = 10.0
+margin_right = -6.0
+margin_bottom = 60.0
 custom_fonts/font = ExtResource( 4 )
 custom_styles/focus = SubResource( 6 )
+icon = ExtResource( 10 )
+flat = true
 
-[node name="B" type="Button" parent="QuestionPanel"]
-margin_left = 463.0
-margin_top = 114.0
-margin_right = 826.0
-margin_bottom = 165.0
-custom_fonts/font = ExtResource( 4 )
-
-[node name="C" type="Button" parent="QuestionPanel"]
-margin_left = 48.0
-margin_top = 179.0
-margin_right = 411.0
-margin_bottom = 230.0
-custom_fonts/font = ExtResource( 4 )
-
-[node name="D" type="Button" parent="QuestionPanel"]
-margin_left = 463.0
-margin_top = 179.0
-margin_right = 826.0
-margin_bottom = 230.0
-custom_fonts/font = ExtResource( 4 )
-
-[node name="QuestionText" type="Label" parent="QuestionPanel"]
-margin_left = 41.0
-margin_top = 11.0
-margin_right = 848.0
-margin_bottom = 68.0
-custom_fonts/font = ExtResource( 4 )
-text = "This is a very important question! What is the answer?"
+[node name="Label" type="Label" parent="QuestionPanel/A"]
+margin_left = 13.0
+margin_top = 4.0
+margin_right = 327.0
+margin_bottom = 46.0
+custom_fonts/font = ExtResource( 11 )
+text = "Правильный ответ"
 align = 1
 valign = 1
-autowrap = true
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Congrats" type="ColorRect" parent="QuestionPanel"]
-visible = false
-margin_left = 177.0
-margin_top = -417.0
-margin_right = 712.0
-margin_bottom = -33.0
-color = Color( 0.317647, 0.827451, 0.894118, 1 )
-
-[node name="EndGameButton" type="Button" parent="QuestionPanel/Congrats"]
-margin_left = 79.0
-margin_top = 225.0
-margin_right = 484.0
-margin_bottom = 330.0
+[node name="B" type="Button" parent="QuestionPanel"]
+margin_left = 7.0
+margin_top = 10.0
+margin_right = 346.0
+margin_bottom = 60.0
 custom_fonts/font = ExtResource( 4 )
-text = "Finish"
+custom_styles/focus = SubResource( 6 )
+icon = ExtResource( 10 )
+flat = true
 
-[node name="CongratsText" type="Label" parent="QuestionPanel/Congrats"]
-margin_left = 27.0
-margin_top = 23.0
-margin_right = 497.0
-margin_bottom = 193.0
+[node name="Label" type="Label" parent="QuestionPanel/B"]
+margin_left = 13.0
+margin_top = 4.0
+margin_right = 327.0
+margin_bottom = 46.0
+custom_fonts/font = ExtResource( 11 )
+text = "Правильный ответ"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="C" type="Button" parent="QuestionPanel"]
+margin_left = -345.0
+margin_top = 67.0
+margin_right = -6.0
+margin_bottom = 117.0
 custom_fonts/font = ExtResource( 4 )
-text = "Is it correct? You tell me!"
+custom_styles/focus = SubResource( 6 )
+icon = ExtResource( 10 )
+flat = true
+
+[node name="Label" type="Label" parent="QuestionPanel/C"]
+margin_left = 13.0
+margin_top = 4.0
+margin_right = 327.0
+margin_bottom = 46.0
+custom_fonts/font = ExtResource( 11 )
+text = "Правильный ответ"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="D" type="Button" parent="QuestionPanel"]
+margin_left = 7.0
+margin_top = 67.0
+margin_right = 346.0
+margin_bottom = 117.0
+custom_fonts/font = ExtResource( 4 )
+custom_styles/focus = SubResource( 6 )
+icon = ExtResource( 10 )
+flat = true
+
+[node name="Label" type="Label" parent="QuestionPanel/D"]
+margin_left = 13.0
+margin_top = 4.0
+margin_right = 327.0
+margin_bottom = 46.0
+custom_fonts/font = ExtResource( 11 )
+text = "Правильный ответ"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="QuestionText" type="Label" parent="QuestionPanel"]
+margin_left = -425.0
+margin_top = -111.0
+margin_right = 429.0
+margin_bottom = -11.0
+custom_fonts/font = ExtResource( 9 )
+text = "This is a very important question! What is the answer?"
 align = 1
 valign = 1
 autowrap = true
@@ -134,4 +174,3 @@ autowrap = true
 [connection signal="pressed" from="QuestionPanel/B" to="QuestionPanel" method="_on_B_pressed"]
 [connection signal="pressed" from="QuestionPanel/C" to="QuestionPanel" method="_on_C_pressed"]
 [connection signal="pressed" from="QuestionPanel/D" to="QuestionPanel" method="_on_D_pressed"]
-[connection signal="pressed" from="QuestionPanel/Congrats/EndGameButton" to="QuestionPanel" method="_on_EndGameButton_pressed"]

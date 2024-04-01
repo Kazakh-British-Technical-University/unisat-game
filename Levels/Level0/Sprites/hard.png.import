@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hard.png-2e27cd8f65a2c1580833a8b0a88b5a5e.stex"
+path="res://.import/hard.png-0804bb465bb63e1201b309fd960b051c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Game/Sprites/hard.png"
-dest_files=[ "res://.import/hard.png-2e27cd8f65a2c1580833a8b0a88b5a5e.stex" ]
+source_file="res://Levels/Level0/Sprites/hard.png"
+dest_files=[ "res://.import/hard.png-0804bb465bb63e1201b309fd960b051c.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/launch.png-d3308b0fb9919fa778579b396d58e066.stex"
+path="res://.import/back_button.png-f54d46948e92104e81df200067844434.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Level2/launch.png"
-dest_files=[ "res://.import/launch.png-d3308b0fb9919fa778579b396d58e066.stex" ]
+source_file="res://Levels/Level0/Sprites/back_button.png"
+dest_files=[ "res://.import/back_button.png-f54d46948e92104e81df200067844434.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/level_button.png-36b9c760c56c595dcf42a3737f5f43dd.stex"
+path="res://.import/glowing_cubesat.png-063dd5fbf1fa6e50140d46972893dc40.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Game/Sprites/level_button.png"
-dest_files=[ "res://.import/level_button.png-36b9c760c56c595dcf42a3737f5f43dd.stex" ]
+source_file="res://Levels/Level0/Sprites/glowing_cubesat.png"
+dest_files=[ "res://.import/glowing_cubesat.png-063dd5fbf1fa6e50140d46972893dc40.stex" ]
 
 [params]
 

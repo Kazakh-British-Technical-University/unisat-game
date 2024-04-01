@@ -1,5 +1,6 @@
 extends Node2D
 
+var startTime
 func Start(json):
 	for obj in json["PreplacedParts"]:
 		if obj["Preplaced"]:
@@ -13,9 +14,11 @@ func Start(json):
 	RearrangeParts()
 
 func _ready():
+	startTime = Time.get_ticks_msec()
 	$AssembleButton/Label.text = global.local("ASSEMBLE")
 	$WinText/Button/Label.text = global.local("LAUNCH")
 	$WinText.text = global.local("CONGRATS")
+	
 
 func PreplaceParts():
 	for i in range(1, $DragManager.get_child_count()):
@@ -40,9 +43,11 @@ func _on_Button_pressed():
 	
 	if correct:
 		global.SFX(0)
+		global.assembleTime = round((Time.get_ticks_msec() - startTime) / 1000)
 		$AssembleButton.visible = false
 		TryAssembly()
 	else:
+		global.assembleWrongs += 1
 		global.SFX(2)
 		for i in range(wrongs.size()):
 			wrongs[i].modulate = Color.red

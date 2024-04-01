@@ -4,15 +4,19 @@ var curButtonNum = 0
 var buttonScene = preload("res://Levels/Level0/ScenarioButton.tscn")
 var json : Dictionary
 var scenarioId = 0
+var diffText = "Easy"
 var diffIconsPaths = 	[
-						"res://Levels/Game/Sprites/easy.png",
-						"res://Levels/Game/Sprites/normal.png",
-						"res://Levels/Game/Sprites/hard.png"
+						"res://Levels/Level0/Sprites/easy.png",
+						"res://Levels/Level0/Sprites/medium.png",
+						"res://Levels/Level0/Sprites/hard.png"
 						]
+var curScreen = 0
 
 func _ready():
-	$TitleText.text = global.local("MISSIONS")
-	$Details/StartButton/Label.text = global.local("START_MISSION")
+	$DescriptionFrame/DescriptionTitle.text = global.local("DESCRIPTION")
+	$DescriptionFrame/GoButton/Label.text = global.local("GO")
+	$TaskBg/MissionFrame/MissionTitle.text = global.local("MISSION")
+	$TaskBg/StartButton/Label.text = global.local("START_MISSION")
 
 func ParseJSON(parsed):
 	json = parsed
@@ -29,18 +33,52 @@ func CreateScenarioButton(scenario, i):
 
 func SelectScenario(id):
 	scenarioId = id
+	curScreen = 1
+	$BackButton.visible = true
+	
 	$ScrollContainer.visible = false
-	$Details.visible = true
-	$TitleText.text = json["Scenarios"][id]["Name"]
-	$Details/DescriptionText.text = json["Scenarios"][id]["Description"]
-	$Details/Difficulty.texture = load(diffIconsPaths[json["Scenarios"][id]["Difficulty"]])
+	$DescriptionFrame.visible = true
+	
+	var diffInd = int(json["Scenarios"][id]["Difficulty"])
+	match diffInd:
+		0:
+			diffText = global.local("EASY")
+		1:
+			diffText = global.local("MEDIUM")
+		2:
+			diffText = global.local("HARD")
+	
+	$DescriptionFrame/Difficulty.texture = load(diffIconsPaths[json["Scenarios"][id]["Difficulty"]])
+	$DescriptionFrame/Difficulty/Label.text = diffText
+	
+	$DescriptionFrame/DescriptionText.text = json["Scenarios"][id]["Description"]
+	$DescriptionFrame/PartsText.text = global.local("MISSING_PARTS") + str(json["Scenarios"][id]["NumParts"])
+	$DescriptionFrame/AltitudeText.text = global.local("LAUNCH_ALTITUDE") + str(json["Scenarios"][id]["Altitude"])
+	$DescriptionFrame/PayloadText.text = global.local("PAYLOAD") + json["Scenarios"][id]["Payload"]
+	$DescriptionFrame/QuestionText.text = global.local("DECISION") + diffText
+
+func _on_GoButton_pressed():
+	global.SFX(0)
+	curScreen = 2
+	$DescriptionFrame.visible = false
+	$TaskBg.visible = true
+	$TaskBg/MissionFrame/MissionText.text = json["Scenarios"][scenarioId]["Mission"]
 
 func _on_StartButton_pressed():
 	global.SFX(0)
+	global.altitude = json["Scenarios"][scenarioId]["Altitude"]
 	get_tree().get_root().get_child(1).StartScenario(scenarioId)
 
 func _on_CloseButton_pressed():
-	$TitleText.text = global.local("MISSIONS")
 	global.SFX(0)
-	$ScrollContainer.visible = true
-	$Details.visible = false
+	match curScreen:
+		2:
+			$TaskBg.visible = false
+			$DescriptionFrame.visible = true
+		1:
+			$DescriptionFrame.visible = false
+			$ScrollContainer.visible = true
+			$BackButton.visible = false
+	curScreen -= 1
+
+

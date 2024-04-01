@@ -1,20 +1,22 @@
 extends Node2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	yield(get_tree().create_timer(2),"timeout")
-	var tween = create_tween()
-	tween.tween_method(self, "Fade", 0.0, 1.0, 1)
-	tween.tween_callback(self, "End")
-
-func Fade(t):
-	$Popup.modulate.a = t
+	$Launch/Button/Label.text = global.local("LAUNCH_SAT")
 
 func End():
 	get_tree().get_root().get_child(1).NextLevel()
+
+var first = true
+func _on_VideoPlayer_finished():
+	if first:
+		$VideoPlayer.visible = false
+		$Launch.visible = true
+	else:
+		End()
+
+func _on_Button_pressed():
+	first = false
+	$Launch.visible = false
+	$VideoPlayer.visible = true
+	$VideoPlayer.stream = load("res://Levels/Level2/920х920_part2.ogv")
+	$VideoPlayer.play()

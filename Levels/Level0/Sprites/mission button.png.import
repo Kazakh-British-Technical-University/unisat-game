@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/level_select_window.png-a75ef392c664e5b8e64c1d0ee7694b66.stex"
+path="res://.import/mission button.png-18fe1e1f4eb70318f0e77b9c2a527570.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Game/Sprites/level_select_window.png"
-dest_files=[ "res://.import/level_select_window.png-a75ef392c664e5b8e64c1d0ee7694b66.stex" ]
+source_file="res://Levels/Level0/Sprites/mission button.png"
+dest_files=[ "res://.import/mission button.png-18fe1e1f4eb70318f0e77b9c2a527570.stex" ]
 
 [params]
 

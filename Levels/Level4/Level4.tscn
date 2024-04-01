@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Levels/Level4/Level4.gd" type="Script" id=1]
+[ext_resource path="res://Levels/Level4/Sprites/Level4_bg.png" type="Texture" id=2]
+[ext_resource path="res://Fonts/FiraSansBlack45.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Fonts/FiraSansBlack30.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Levels/Level0/Sprites/mission button.png" type="Texture" id=5]
+[ext_resource path="res://Fonts/RobotoRegular28.tres" type="DynamicFont" id=6]
+
+[node name="Level4" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Level4Bg" type="Sprite" parent="."]
+position = Vector2( 460, 460 )
+texture = ExtResource( 2 )
+
+[node name="TitleText" type="Label" parent="."]
+margin_left = 165.0
+margin_top = 204.0
+margin_right = 761.0
+margin_bottom = 334.0
+custom_fonts/font = ExtResource( 3 )
+text = "asdfasd
+asdfasdafasdfasda!"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="GoodbyeText" type="Label" parent="."]
+margin_left = 60.0
+margin_top = 410.0
+margin_right = 860.0
+margin_bottom = 606.0
+custom_fonts/font = ExtResource( 4 )
+text = "asdfasd
+asdfasdafasdfasda!"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="SummaryText" type="Label" parent="."]
+margin_left = 60.0
+margin_top = 636.0
+margin_right = 860.0
+margin_bottom = 766.0
+custom_fonts/font = ExtResource( 4 )
+text = "asdfasd
+asdfasdafasdfasda!"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="MenuButton" type="Button" parent="."]
+margin_left = 237.0
+margin_top = 773.0
+margin_right = 683.0
+margin_bottom = 888.0
+icon = ExtResource( 5 )
+flat = true
+icon_align = 1
+
+[node name="BackText" type="Label" parent="MenuButton"]
+margin_left = 14.0
+margin_top = 7.0
+margin_right = 434.0
+margin_bottom = 108.0
+custom_fonts/font = ExtResource( 6 )
+text = "Back to menu"
+align = 1
+valign = 1
+autowrap = true
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_MenuButton_pressed"]

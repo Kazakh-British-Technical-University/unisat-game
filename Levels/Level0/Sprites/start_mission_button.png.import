@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/launch.png-d3308b0fb9919fa778579b396d58e066.stex"
+path="res://.import/start_mission_button.png-252e7c961b8ec595d8a870799ba6ffdd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Level2/launch.png"
-dest_files=[ "res://.import/launch.png-d3308b0fb9919fa778579b396d58e066.stex" ]
+source_file="res://Levels/Level0/Sprites/start_mission_button.png"
+dest_files=[ "res://.import/start_mission_button.png-252e7c961b8ec595d8a870799ba6ffdd.stex" ]
 
 [params]
 

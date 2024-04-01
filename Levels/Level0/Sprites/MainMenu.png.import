@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/easy.png-8e4fbc624f40c4c34dd59bdc55ca5a29.stex"
+path="res://.import/MainMenu.png-3cb122944562eaf648a67e75f84d612e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Game/Sprites/easy.png"
-dest_files=[ "res://.import/easy.png-8e4fbc624f40c4c34dd59bdc55ca5a29.stex" ]
+source_file="res://Levels/Level0/Sprites/MainMenu.png"
+dest_files=[ "res://.import/MainMenu.png-3cb122944562eaf648a67e75f84d612e.stex" ]
 
 [params]
 

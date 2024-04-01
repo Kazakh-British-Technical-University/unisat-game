@@ -38,7 +38,7 @@ func DragDone():
 			var temp = $"../../Sockets".get_child(i)
 			if temp.part_ref != null:
 				get_parent().move_child(temp.part_ref, get_parent().get_child_count())
-				print(temp.part_ref)
+				#print(temp.part_ref)
 	
 	$"../../AssembleButton".visible = $"../../Sockets".NumFree() == 0
 

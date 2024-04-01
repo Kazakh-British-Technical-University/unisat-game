@@ -100,7 +100,7 @@ func ExtractCSVdata(lines):
 	var offset = 0
 	var dir = 1
 	
-	var sensorLabels = str(lines[0]).split(",")
+	var sensorLabels = str(lines[0]).split(";")
 	
 	sensor1["Label"] = sensorLabels[0]
 	sensor1["Data"] = []
@@ -110,7 +110,7 @@ func ExtractCSVdata(lines):
 	sensor3["Data"] = []
 	
 	for i in range(1, lines.size()):
-		var values = str(lines[i]).split(",")
+		var values = str(lines[i]).split(";")
 		
 		#print(values)
 		if (values.size() > 1):
@@ -144,7 +144,7 @@ func LoadTranslations():
 	var f = File.new()
 	f.open(dataFolder + "Translations.txt", File.READ)
 	while not f.eof_reached():
-		lines.append(f.get_csv_line())
+		lines.append(f.get_csv_line(";"))
 	f.close()
 	ExtractTranslations(lines)
 
@@ -163,7 +163,7 @@ func ExtractTranslations(lines):
 	for i in range(1, lines.size()):
 		var line
 		if web:
-			line = lines[i].split(",")
+			line = lines[i].split(";")
 		else:
 			line = lines[i]
 

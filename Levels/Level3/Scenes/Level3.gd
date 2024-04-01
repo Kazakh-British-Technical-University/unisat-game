@@ -32,7 +32,7 @@ func _on_Slider_value_changed(value):
 	$Chart4.MoveSlider(value)
 
 func SetupJSON(json):
-	max_alt = json["Altitude"]
+	max_alt = global.altitude
 	var questions = json["Questions"]
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
@@ -43,7 +43,7 @@ func SetupJSON(json):
 	var i = 0
 	while answers.size() > 0:
 		var answerInd = rng.randi_range(0, answers.size() - 1)
-		$QuestionPanel.get_child(i).text = curQuestion["Answers"][answers[answerInd]]
+		$QuestionPanel.get_child(i).get_child(0).text = curQuestion["Answers"][answers[answerInd]]
 		if (answers[answerInd] == 0):
 			$QuestionPanel.correctAnswer = i
 		answers.remove(answerInd)

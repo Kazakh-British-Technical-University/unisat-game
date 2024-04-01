@@ -30,7 +30,7 @@ func DrawLine(data, increment):
 		var y = lerp(0, height, (float(data[i])-min_y) / (max_y-min_y))
 		
 		line.add_point(Vector2(x, height - y) + offset)
-		if i % 5 == 0:
+		if i % 10 == 0:
 			yield(get_tree().create_timer(0.01),"timeout")
 	
 	$"..".Finished()

@@ -11,6 +11,7 @@ var level0 = preload("res://Levels/Level0/Level0.tscn")
 var level1 = preload("res://Levels/Level1/Level1.tscn")
 var level2 = preload("res://Levels/Level2/Level2.tscn")
 var level3 = preload("res://Levels/Level3/Scenes/Level3.tscn")
+var level4 = preload("res://Levels/Level4/Level4.tscn")
 
 func _ready():
 	#_on_SoundButton_pressed()
@@ -52,6 +53,11 @@ func Result(json):
 			$LevelContainer.add_child(curScene)
 			curScene.SetupJSON(curJSON["DataCollection"])
 			curScene.SetupCSV(sensorData)
+		4:
+			curScene.queue_free()
+			curScene = level4.instance()
+			$LevelContainer.add_child(curScene)
+			
 
 func StartScenario(id):
 	curScenario = id
@@ -60,9 +66,12 @@ func StartScenario(id):
 
 func NextLevel():
 	curLevel += 1
-	if (curLevel > 3):
+	if (curLevel > 4):
 		curScene.queue_free()
 		curLevel = 0
+		global.assembleTime = 0
+		global.assembleWrongs = 0
+		global.questionTries = 0
 		LoadJSON()
 	else:
 		Result(curJSON)
@@ -96,7 +105,7 @@ func SFX(id):
 		3:
 			$sfx4.play()
 
-var langs = ["EN", "KZ", "RU"]
+var langs = ["EN", "RU", "KZ"]
 func _on_LanguageButton_pressed():
 	global.curLang += 1
 	if (global.curLang == 3):
