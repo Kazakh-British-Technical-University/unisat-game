@@ -70,7 +70,7 @@ func RearrangeParts():
 			var temp = $Sockets.get_child(i)
 			if temp.part_ref != null:
 				$DragManager.move_child(temp.part_ref, $DragManager.get_child_count() - 1)
-	$DragManager.get_child($DragManager.get_child_count() - 1).z_index = 200
+	#$DragManager.get_child($DragManager.get_child_count() - 1).z_index = 200
 
 func MoveParts(t : float):
 	for i in range(1, $DragManager.get_child_count()):

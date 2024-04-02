@@ -18,7 +18,6 @@ ALTITUDE;Altitude;Высота;
 CORRECT;Good job!;Отличная работа!;
 WRONG;Try again…;Попытайся еще…;
 TASK_COMPLETE;You finished the task!;Вы справились с заданием!;
-END_SCREEN;Mission success!;Спутник успешно завершил свою миссию в атмосфере, а вы успешно справились с заданием! Попробуйте пройти это задание ещё раз, чтобы улучшить свой результат, или приступайте к следующей миссии!;
 ASSEMBLY_TIME;Assembly time in seconds: ;Секунд потрачено на сборку: ;
 ASSEMBLY_WRONGS;Mistakes made during assembly: ;Количество ошибок при сборке: ;
 QUESTION_TRIES;Number of wrong answers: ;Количество попыток ответа на вопрос: ;

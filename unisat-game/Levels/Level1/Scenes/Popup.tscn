@@ -31,9 +31,11 @@ text = "Lorem ipsum"
 align = 1
 autowrap = true
 
-[node name="Pic" type="Sprite" parent="Window"]
+[node name="PicHolder" type="Node2D" parent="Window"]
 position = Vector2( 317.5, 383.5 )
 scale = Vector2( 1.12209, 1.12209 )
+
+[node name="Pic" type="Sprite" parent="Window/PicHolder"]
 texture = ExtResource( 4 )
 
 [node name="TextTop" type="Label" parent="Window"]

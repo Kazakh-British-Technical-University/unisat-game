@@ -22,7 +22,7 @@ func _process(delta):
 		$Pointer.global_position = Vector2(-100, -100)
 		if top_part != null:
 			if t <= clickTime:
-				$"../Popup".ShowPopup(top_part.part_name)
+				$"../Popup".ShowPopup(top_part.part_name, top_part)
 			top_part.ReturnPart()
 			top_part = null
 

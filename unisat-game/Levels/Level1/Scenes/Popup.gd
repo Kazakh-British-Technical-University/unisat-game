@@ -2,10 +2,12 @@ extends Node2D
 
 var spriteFolder = "res://Levels/Level1/Sprites/Parts/"
 
-func ShowPopup(title):
+func ShowPopup(title, part_ref):
 	$"../DragManager".inPopup = true
+	
 	$Window.visible = true
-	$Window/Pic.texture = load(spriteFolder + title + ".png")
+	$Window/PicHolder/Pic.texture = part_ref.GetTexture()
+	$Window/PicHolder/Pic.position = part_ref.GetOffset()
 	
 	#$Window/Title.text = title
 	$Window/Title.text = global.local(title+"1")

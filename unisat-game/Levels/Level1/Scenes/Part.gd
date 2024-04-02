@@ -81,3 +81,9 @@ func PreplacePart(body):
 	$CollisionShape2D.scale = Vector2.ONE * 0.6
 	global_position = body_ref.global_position
 	plugged_pos = global_position
+
+func GetTexture():
+	return $PlugOut.texture
+
+func GetOffset():
+	return $PlugOut.position

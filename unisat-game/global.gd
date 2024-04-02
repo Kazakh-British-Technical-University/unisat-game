@@ -17,3 +17,4 @@ var altitude = 100
 var questionTries = 0
 var assembleWrongs = 0
 var assembleTime = 0.0
+var finalMessage = ""

@@ -18,12 +18,15 @@ func Start():
 
 func Finished():
 	global.SFX(1)
-	$QuestionPanel.visible = true
-	$Slider.visible = true
+	
 	$Chart1.ShowSlider()
 	$Chart2.ShowSlider()
 	$Chart3.ShowSlider()
 	$Chart4.ShowSlider()
+	
+	$QuestionPanel.visible = true
+	$Slider.visible = true
+	_on_Slider_value_changed(0.5)
 
 func _on_Slider_value_changed(value):
 	$Chart1.MoveSlider(value)

@@ -54,10 +54,10 @@ func Result(json):
 			curScene.SetupJSON(curJSON["DataCollection"])
 			curScene.SetupCSV(sensorData)
 		4:
+			global.finalMessage = curJSON["FinalMessage"]
 			curScene.queue_free()
 			curScene = level4.instance()
 			$LevelContainer.add_child(curScene)
-			
 
 func StartScenario(id):
 	curScenario = id
