@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Template</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script src="index.js"></script>
+        <script>
+		
+			function fetchJSONData(path) {
+				fetch(path)
+					.then(response => response.text())
+					.then
+					((data) => 
+						{
+							//console.log("JS: " + data);
+							godotFunctions.SendToGodot(data);
+						}
+					)
+			}
+			
+			function fetchCSV(path) {
+				fetch(path)
+					.then(response => response.text())
+					.then
+					((data) => 
+						{
+							//console.log(data);
+							godotFunctions.SendCSV(data);
+						}
+					)
+			}
+			
+			function fetchTrans(path) {
+				fetch(path)
+					.then(response => response.text())
+					.then
+					((data) => 
+						{
+							//console.log(data);
+							godotFunctions.SendTrans(data);
+						}
+					)
+			}
+			
+			window.godotFunctions = {};
+			window.externalator = {
+				addGodotFunction: (n,f) => {
+					window.godotFunctions[n] = f;
+				}
+			}
+			
+            var engine = new Engine({"args":[],"canvasResizePolicy":2,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":11052368,"index.wasm":17865444},"focusCanvas":true,"gdnativeLibs":[]});
+            engine.startGame();
+        </script>
+    </body>
+</html>

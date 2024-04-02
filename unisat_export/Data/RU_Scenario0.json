@@ -1,0 +1,33 @@
+{
+	"Assembly": 
+	{
+		"PreplacedParts":
+		[
+			{"PartName": "Antenna","Preplaced": true},
+			{"PartName": "Frame1","Preplaced": true},
+			{"PartName": "Frame2","Preplaced": true},
+			{"PartName": "Top","Preplaced": true},
+			{"PartName": "Battery","Preplaced": true},
+			{"PartName": "Solar","Preplaced": true},
+			{"PartName": "Control","Preplaced": true},
+			{"PartName": "Air","Preplaced": false}
+		]
+	},
+	
+	"Datafile": "RU_Data0",
+	
+	"DataCollection": 
+	{
+		"Questions": 
+		[
+			{
+				"QuestionText": "Что происходит с качеством воздуха на высоте 1500 метров?",
+				"Answers": ["Правильный ответ", "Неправильный ответ", "Неправильный ответ", "Неправильный ответ"]
+			},
+			{
+				"QuestionText": "Рандомный вопрос 2",
+				"Answers": ["Правильный ответ", "Неправильный ответ", "Неправильный ответ", "Неправильный ответ"]
+			}
+		]
+	}
+}
