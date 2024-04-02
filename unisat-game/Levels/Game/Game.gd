@@ -80,14 +80,14 @@ var soundOn = true
 func _on_SoundButton_pressed():
 	soundOn = not soundOn
 	if soundOn:
-		$SoundButton.icon = load("res://Levels/Game/Sprites/sound_off.png")
+		$SoundButton.icon = load("res://Levels/Game/Sprites/sound_on.png")
 		$Music.volume_db = 0
 		$sfx1.volume_db = 0
 		$sfx2.volume_db = 0
 		$sfx3.volume_db = 0
 		$sfx4.volume_db = 0
 	else:
-		$SoundButton.icon = load("res://Levels/Game/Sprites/sound_on.png")
+		$SoundButton.icon = load("res://Levels/Game/Sprites/sound_off.png")
 		$Music.volume_db = -80
 		$sfx1.volume_db = -80
 		$sfx2.volume_db = -80

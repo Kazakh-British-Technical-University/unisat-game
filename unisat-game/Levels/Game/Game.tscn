@@ -3,7 +3,7 @@
 [ext_resource path="res://Levels/Game/Game.gd" type="Script" id=1]
 [ext_resource path="res://Levels/Game/JSONparser.gd" type="Script" id=2]
 [ext_resource path="res://Levels/Game/Sounds/relaxin_low_beats_bg.MP3" type="AudioStream" id=3]
-[ext_resource path="res://Levels/Game/Sprites/sound_off.png" type="Texture" id=4]
+[ext_resource path="res://Levels/Game/Sprites/sound_on.png" type="Texture" id=4]
 [ext_resource path="res://Levels/Game/Sprites/lang_button.png" type="Texture" id=5]
 [ext_resource path="res://Fonts/RobotoRegular28.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Levels/Game/Sounds/clicking_dot.mp3" type="AudioStream" id=7]
@@ -20,7 +20,6 @@ script = ExtResource( 1 )
 
 [node name="JSONparser" type="Node2D" parent="."]
 script = ExtResource( 2 )
-web = true
 
 [node name="LevelContainer" type="Node2D" parent="."]
 

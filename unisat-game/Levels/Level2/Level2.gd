@@ -15,6 +15,7 @@ func _on_VideoPlayer_finished():
 		End()
 
 func _on_Button_pressed():
+	global.SFX(0)
 	first = false
 	$Launch.visible = false
 	$VideoPlayer.visible = true
