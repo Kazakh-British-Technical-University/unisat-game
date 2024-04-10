@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/success.mp3-9d0fc70866386f0bb4aacb226e02fa0f.mp3str"
+
+[deps]
+
+source_file="res://Stages/Game/Sounds/success.mp3"
+dest_files=[ "res://.import/success.mp3-9d0fc70866386f0bb4aacb226e02fa0f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

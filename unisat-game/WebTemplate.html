@@ -44,6 +44,18 @@
 						}
 					)
 			}
+			function fetchImage(path) {
+				fetch(path)
+					.then(response => response.arrayBuffer())
+					.then
+					((data) => 
+						{
+							console.log("Binary");
+							console.log(data);
+							godotFunctions.SendImage(data);
+						}
+					)
+			}
 			
 			window.godotFunctions = {};
 			window.externalator = {
@@ -51,6 +63,7 @@
 					window.godotFunctions[n] = f;
 				}
 			}
+			
 			
             var engine = new Engine($GODOT_CONFIG);
             engine.startGame();

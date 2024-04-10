@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Part",
 "language": "GDScript",
-"path": "res://Levels/Level1/Scenes/Part.gd"
+"path": "res://Stages/Stage1/Scenes/Part.gd"
 } ]
 _global_script_class_icons={
 "Part": ""
@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="UniSatGame"
-run/main_scene="res://Levels/Game/Game.tscn"
+run/main_scene="res://Stages/Game/Game.tscn"
 config/icon="res://icon.png"
 
 [autoload]

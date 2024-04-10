@@ -44,6 +44,24 @@
 						}
 					)
 			}
+			function fetchImage(path) {
+				fetch(path)
+					.then(response => response.arrayBuffer())
+					.then
+					((data) => 
+						{
+							console.log("Binary");
+							console.log(data);
+							godotFunctions.SendImage(data);
+						}
+					)
+					
+				var downloadingImage = new Image();
+				downloadingImage.onload = function(){
+					//godotFunctions.SendImage(getImageData(downloadingImage)); 
+				};
+				downloadingImage.src = path;
+			}
 			
 			window.godotFunctions = {};
 			window.externalator = {
@@ -52,7 +70,16 @@
 				}
 			}
 			
-            var engine = new Engine({"args":[],"canvasResizePolicy":2,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":11052848,"index.wasm":17865444},"focusCanvas":true,"gdnativeLibs":[]});
+			var iconCanvas = document.createElement("canvas");
+			var ctx = iconCanvas.getContext("2d");
+			
+			function getImageData(img) {
+				ctx.drawImage(img, 0, 0);
+				var imageData = ctx.getImageData(0, 0, img.width, img.height).data;
+				console.log("image data:", imageData);
+				return imageData;
+			}
+            var engine = new Engine({"args":[],"canvasResizePolicy":2,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":11009648,"index.wasm":17865444},"focusCanvas":true,"gdnativeLibs":[]});
             engine.startGame();
         </script>
     </body>

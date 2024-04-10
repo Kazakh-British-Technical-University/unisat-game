@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Stages/Stage2/920х920_part1.ogv" type="VideoStream" id=1]
+[ext_resource path="res://Stages/Stage1/Sprites/assemble_button.png" type="Texture" id=2]
+[ext_resource path="res://Stages/Stage2/Stage2.gd" type="Script" id=3]
+[ext_resource path="res://Stages/Stage2/launch.png" type="Texture" id=4]
+[ext_resource path="res://Fonts/FiraSansBlack32.tres" type="DynamicFont" id=5]
+
+[node name="Level2" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+margin_left = -4.0
+margin_top = -4.0
+margin_right = 924.0
+margin_bottom = 924.0
+stream = ExtResource( 1 )
+autoplay = true
+expand = false
+
+[node name="Launch" type="Sprite" parent="."]
+visible = false
+position = Vector2( 460, 460 )
+texture = ExtResource( 4 )
+
+[node name="Button" type="Button" parent="Launch"]
+margin_left = -186.0
+margin_top = 161.0
+margin_right = 187.0
+margin_bottom = 275.0
+icon = ExtResource( 2 )
+flat = true
+icon_align = 1
+
+[node name="Label" type="Label" parent="Launch/Button"]
+margin_left = 15.0
+margin_top = 4.0
+margin_right = 354.0
+margin_bottom = 110.0
+custom_fonts/font = ExtResource( 5 )
+text = "Запустить спутник"
+align = 1
+valign = 1
+
+[connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]
+[connection signal="pressed" from="Launch/Button" to="." method="_on_Button_pressed"]

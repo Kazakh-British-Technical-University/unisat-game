@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Stages/Stage1/Scenes/ExplodedView.gd" type="Script" id=2]
+[ext_resource path="res://Stages/Stage1/Scenes/PartSlot.tscn" type="PackedScene" id=3]
+
+[node name="Sockets" type="Node2D"]
+modulate = Color( 1, 1, 1, 0.584314 )
+script = ExtResource( 2 )
+
+[node name="Line" type="ColorRect" parent="."]
+margin_left = 133.0
+margin_top = 279.0
+margin_right = 566.0
+margin_bottom = 281.0
+rect_rotation = -30.0
+color = Color( 1, 1, 1, 0.545098 )
+
+[node name="Part Slot1" parent="." instance=ExtResource( 3 )]
+position = Vector2( 133, 279 )
+
+[node name="Part Slot2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 178, 254 )
+part_name = "frame"
+
+[node name="Part Slot3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 222, 229 )
+part_name = "top"
+
+[node name="Part Slot4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 271, 203 )
+part_name = "bat"
+
+[node name="Part Slot5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 361, 149 )
+part_name = "air"
+
+[node name="Part Slot6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 411, 120 )
+part_name = "frame"
+
+[node name="Part Slot7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 466, 88 )
+part_name = "control"
+
+[node name="Part Slot8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 509, 63 )
+part_name = "solar"

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/relaxin_low_beats_bg.MP3-02f578271491ed64467ec902cfad80b9.mp3str"
+
+[deps]
+
+source_file="res://Stages/Game/Sounds/relaxin_low_beats_bg.MP3"
+dest_files=[ "res://.import/relaxin_low_beats_bg.MP3-02f578271491ed64467ec902cfad80b9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

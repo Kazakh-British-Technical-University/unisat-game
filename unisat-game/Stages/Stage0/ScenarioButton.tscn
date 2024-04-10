@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Fonts/FiraSansBlack32.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Fonts/FiraSansBlack45.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Stages/Stage0/ScenarioButton.gd" type="Script" id=3]
+[ext_resource path="res://Stages/Stage0/Sprites/mission button.png" type="Texture" id=4]
+
+[node name="Button" type="Button"]
+margin_right = 445.0
+margin_bottom = 115.0
+custom_fonts/font = ExtResource( 1 )
+icon = ExtResource( 4 )
+flat = true
+script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 10.0
+margin_top = 4.0
+margin_right = 436.0
+margin_bottom = 111.0
+custom_fonts/font = ExtResource( 2 )
+text = "Story 1"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="." to="." method="_on_Button_pressed"]

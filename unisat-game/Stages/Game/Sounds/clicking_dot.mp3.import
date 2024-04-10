@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/clicking_dot.mp3-0c83ad7d3fa05972bd847d82a7502725.mp3str"
+
+[deps]
+
+source_file="res://Stages/Game/Sounds/clicking_dot.mp3"
+dest_files=[ "res://.import/clicking_dot.mp3-0c83ad7d3fa05972bd847d82a7502725.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

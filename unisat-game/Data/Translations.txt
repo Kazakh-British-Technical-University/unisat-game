@@ -1,45 +1,44 @@
 ﻿key;en;ru;kk_KZ
-DESCRIPTION;Scenario description;Описание сценария;
-MISSION;Mission;Задание игры;
-GO;Go!;Поехали!;
-START_MISSION;Start mission;Приступить к миссии;
-EASY;Easy;Простой;
-MEDIUM;Medium;Средний;
-HARD;Hard;Сложный;
-MISSING_PARTS;Missing parts: ;Деталей для сборки: ;
-LAUNCH_ALTITUDE;Altitude: ;Высота запуска: ;
-PAYLOAD;Payload: ;Полезная нагрузка: ;
-DECISION;Decision level: ;Принятие решения: ;
-ASSEMBLE;Assemble;Собрать;
-LAUNCH;Launch;Запустить;
-CONGRATS;Congratulations!;Поздравляем!;
-LAUNCH_SAT;Launch satellite;Запустить спутник;
-ALTITUDE;Altitude;Высота;
-CORRECT;Good job!;Отличная работа!;
-WRONG;Try again…;Попытайся еще…;
-TASK_COMPLETE;You finished the task!;Вы справились с заданием!;
-ASSEMBLY_TIME;Assembly time in seconds: ;Секунд потрачено на сборку: ;
-ASSEMBLY_WRONGS;Mistakes made during assembly: ;Количество ошибок при сборке: ;
-QUESTION_TRIES;Number of wrong answers: ;Количество попыток ответа на вопрос: ;
-BACK_MENU;Back to menu;Вернуться в меню;
-antenna1;Antenna;Антенна;
-antenna2;Lorem ipsum dolor sit amet consectetur. Vel senectus orci tortor nec. ;Lorem ipsum dolor sit amet consectetur. Vel senectus orci tortor nec. ;
-antenna3;Magna tempor bibendum et dui. Venenatis egestas sed aliquet nascetur tellus. Sed amet sit nunc amet semper erat magna ultricies.;Magna tempor bibendum et dui. Venenatis egestas sed aliquet nascetur tellus. Sed amet sit nunc amet semper erat magna ultricies.;
-frame1;Frame;Корпус ;
-frame2;Lorem ipsum dolor sit amet consectetur. Vel senectus orci tortor nec. ;Lorem ipsum dolor sit amet consectetur. Vel senectus orci tortor nec. ;
-frame3;Magna tempor bibendum et dui. Venenatis egestas sed aliquet nascetur tellus. Sed amet sit nunc amet semper erat magna ultricies.;Magna tempor bibendum et dui. Venenatis egestas sed aliquet nascetur tellus. Sed amet sit nunc amet semper erat magna ultricies.;
-bat1;Battery;Батарея;
-bat2;Lorem ipsum dolor sit amet consectetur. Vel senectus orci tortor nec. ;Lorem ipsum dolor sit amet consectetur. Vel senectus orci tortor nec. ;
-bat3;Magna tempor bibendum et dui. Venenatis egestas sed aliquet nascetur tellus. Sed amet sit nunc amet semper erat magna ultricies.;Magna tempor bibendum et dui. Venenatis egestas sed aliquet nascetur tellus. Sed amet sit nunc amet semper erat magna ultricies.;
-solar1;Solar panel;Солнечная панель;
-solar2;Lorem ipsum dolor sit amet consectetur. Vel senectus orci tortor nec. ;Lorem ipsum dolor sit amet consectetur. Vel senectus orci tortor nec. ;
-solar3;Magna tempor bibendum et dui. Venenatis egestas sed aliquet nascetur tellus. Sed amet sit nunc amet semper erat magna ultricies.;Magna tempor bibendum et dui. Venenatis egestas sed aliquet nascetur tellus. Sed amet sit nunc amet semper erat magna ultricies.;
-control1;Control board;Бортовой компьютер;
-control2;Lorem ipsum dolor sit amet consectetur. Vel senectus orci tortor nec. ;Lorem ipsum dolor sit amet consectetur. Vel senectus orci tortor nec. ;
-control3;Magna tempor bibendum et dui. Venenatis egestas sed aliquet nascetur tellus. Sed amet sit nunc amet semper erat magna ultricies.;Magna tempor bibendum et dui. Venenatis egestas sed aliquet nascetur tellus. Sed amet sit nunc amet semper erat magna ultricies.;
-air1;Air sensor;Датчик воздуха;
-air2;Lorem ipsum dolor sit amet consectetur. Vel senectus orci tortor nec. ;Lorem ipsum dolor sit amet consectetur. Vel senectus orci tortor nec. ;
-air3;Magna tempor bibendum et dui. Venenatis egestas sed aliquet nascetur tellus. Sed amet sit nunc amet semper erat magna ultricies.;Magna tempor bibendum et dui. Venenatis egestas sed aliquet nascetur tellus. Sed amet sit nunc amet semper erat magna ultricies.;
-top1;TOP subsystem;Подсистема ТОП;
-top2;Lorem ipsum dolor sit amet consectetur. Vel senectus orci tortor nec. ;Lorem ipsum dolor sit amet consectetur. Vel senectus orci tortor nec. ;
-top3;Magna tempor bibendum et dui. Venenatis egestas sed aliquet nascetur tellus. Sed amet sit nunc amet semper erat magna ultricies.;Magna tempor bibendum et dui. Venenatis egestas sed aliquet nascetur tellus. Sed amet sit nunc amet semper erat magna ultricies.;
+DESCRIPTION;Scenario description;Описание сценария;Сценарий сипаттамасы
+MISSION;Game task;Задание игры;Ойын тапсырмасы
+GO;Go!;Поехали!;Кеттік!
+START_MISSION;Embark on a mission;Приступить к миссии;Миссияны бастау
+EASY;Easy;Простой;Жеңіл
+MEDIUM;Medium;Средний;Орташа
+HARD;Hard;Сложный;Қиын
+MISSING_PARTS;Missing parts;Деталей для сборки;Құрастыруға арналған бөлшектер
+LAUNCH_ALTITUDE;Launch altitude;Высота запуска;Іске қосу биіктігі
+PAYLOAD;Payload;Полезная нагрузка;Пайдалы жүктеме
+DIFFICULTY;Difficulty;Уровень сложности;Қиындық деңгейі
+ASSEMBLE;Assemble;Собрать;Жинау
+LAUNCH;Launch;Запустить;Іске қосу
+CONGRATS;Congratulations!;Поздравляем!;Құттықтаймыз!
+LAUNCH_SAT;Launch a nanosatellite;Запустить спутник;Спутникты ұшыру
+ALTITUDE;Altitude;Высота;Биіктік
+TASK_COMPLETE;You finished the task!;Вы справились с заданием!;Сіз тапсырманы сәтті орындадыңыз!
+END_SCREEN;Mission success!;Спутник успешно завершил свою миссию в атмосфере, а вы успешно справились с заданием! Попробуйте пройти это задание ещё раз, чтобы улучшить свой результат, или приступайте к следующей миссии!; 
+ASSEMBLY_TIME;Assembly time in seconds;Секунд потрачено на сборку;Құрастыруға жұмсалған секунд саны
+ASSEMBLY_WRONGS;Mistakes made during assembly;Количество ошибок при сборке;Құрастыру кезіндегі қателер саны
+QUESTION_TRIES;Number of wrong answers;Количество попыток ответа на вопрос;Сұраққа жауап беру әрекеттерінің саны:
+BACK_MENU;Back to menu;Вернуться в меню;Мәзірге оралу
+antenna1;Antenna systems;Антенная система ;Антенна жүйесі
+antenna2;The nanosatellite uses an ultrashort wave (UHF) antenna system.;На наноспутнике используется антенная система ультракоротковолнового (УКВ);Наноспутникте ультра қысқа толқынды (УҚТ) диапазондағы антенна жүйесі қолданылады. 
+antenna3;A Yagi-type antenna system is used to receive signals on the Earth.;диапазона. Для приема сигналов на Земле используется антенная система типа Яги.;Жердегі сигналдарды қабылдау үшін Яга типті антенна жүйесі қолданылады.
+frame1;Nanosatellite body;Корпус наноспутника ;Наноспутник корпусы
+frame2;The body of the nanosatellite is made of special aluminum.;Корпус наноспутника выполняется из специального алюминия.;Наноспутниктің корпусы арнайы алюминийден жасалған.
+frame3;The body is assembled from two pairs of parts (side, end). M3 countersunk head screws are used to connect the body elements and mount the internal racks.;Корпус собирается из двух пар деталей (боковая, торцевая). Для соединения элементов корпуса и крепления внутренних стоек используются винты с потайной головкой М3.;Корпус екі бөліктен жиналады (бүйірлік, соңғы бөліктері). Корпус элементтерін қосу және ішкі тіректерді бекіту үшін М3 жасырын басы бар бұрандалар қолданылады.
+bat1;Electrical Power System ;Подсистема энергоснабжения;Энергия жабдықтау жүйесі
+bat2;Manages the electrical power from the solar panels.;Управляет электроэнергией от солнечных панелей. Отвечает за;Күн панельдерінен алынатын электр қуатын басқарады.
+bat3;Responsible for storing energy in the batteries and distributing electricity to the satellite subsystems. For this reason, it must have a very high reliability compared to other components of the satellite.;хранение энергии в батареях и распределяет электроэнергию по подсистемам спутника. По этой причине, она должна иметь очень высокую надежность.;Батареяларда энергияны сақтауға және электр энергиясын спутниктің ішкі жүйелеріне таратуға жауапты. Осы себепті, ол спутниктің басқа жүйелерімен салыстырғанда өте жоғары сенімділікке ие болуы керек.
+solar1;Solar panel;Cолнечная панель;Күн панелі
+solar2;It is an integral part of the electrical power system.;Являются составной частью системы энергоснабжения.;Энергиямен жабдықтау жүйесінің құрамдас бөлігі болып табылады.
+solar3;The size of the solar panels and the capacity of the batteries are determined based on the power consumption of a particular nanosatellite mission. ;Размер солнечных панелей и емкость аккумуляторных батарей определяются исходя их энергопотребления конкретной миссии спутника. ;Күн панельдерінің мөлшері мен аккумуляторлық батареялардың сыйымдылығы олардың спутниктің белгілі бір миссиясының қуат тұтынуына байланысты анықталады.
+control1;Onboard Computer ;Бортовой компьютер;Борттық компьютер 
+control2;It manages data transmission and storage, and processes signals for transmission to Earth.;Управляет передачей и хранением данных, обрабатывает;Деректерді беру мен сақтауды басқарады, Жерге жіберілетін сигналдарды өңдейді.
+control3;It also has a communication system that is responsible for real-time information exchange between the satellite and the Earth.;сигналы для передачи на Землю. В ней также есть система связи, которая отвечает за обмен информации между спутником и Землей в режиме реального времени.;Сондай-ақ, компьютермен қоса нақты уақыт режиміндегі байланыс жүйесі бар. Ол наноспутник пен Жер арасындағы ақпарат алмасуына жауап береді.
+air1;Payload Subsystem;Подсистема полезной нагрузки ;Пайдалы жүктеме жүйесі
+air2;The satellite mission is closely related to the payload on board.;Миссия спутника тесно связана с полезной нагрузкой на борту. ;Миссия борттың пайдалы жүктемесімен тығыз байланысты.
+air3;The air pollution sensor, which measures the concentration of microparticles PM2.5, PM10 dangerous for human health, was selected as the payload in this mission.;В качестве полезной нагрузки  в этой миссии был выбран датчик загрязненности воздуха, который измеряет концентрацию опасных для здоровья человека микрочастиц PM2.5, PM10.;Бұл миссияда пайдалы жүктеме ретінде адам денсаулығына қауіпті PM2.5 және PM10 микробөлшектерінің концентрациясын өлшейтін ауаның ластану сенсоры таңдалды.
+top1;TOP subsystem;Подсистема ТОП;ТОП ішкі жүйесі
+top2;The TOP subsystem is unique to the UniSat nanosatellite.;Подсистема ТОП присуща только наноспутнику UniSat. В других спутниках может;ТОП ішкі жүйесі тек UniSat наноспутнигіне тән.
+top3;Other satellites may lack this subsystem. There is an RBF (Remove Before Flight) key and a GPS antenna. Also, the EPS subsystem is charged through this board.;отсутствовать данная подсистема. Тут расположен ключ RBF (Remote Before Flight) и антенна GPS. Также заряд подсистемы EPS происходит через данную плату.;Басқа спутниктерде бұл ішкі жүйе болмауы мүмкін. Осы жүйеде RBF (Remove Before Flight) кілті мен GPS антеннасы орналасқан. Және EPS ішкі жүйесінің заряды осы тақта арқылы жүреді.
