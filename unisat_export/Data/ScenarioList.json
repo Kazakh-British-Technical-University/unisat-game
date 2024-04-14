@@ -1,0 +1,31 @@
+{
+  "Scenarios": [
+		{
+			"Name":"MISSION1_TITLE",
+			"Description": "GENERIC_DESCRIPTION1",
+			"Difficulty": 0,
+			"NumParts": 3,
+			"Altitude": 3000,
+			"Payload": "PAYLOAD_AIR",
+			"Mission": "MISSION1_DESCRIPTION"
+		},
+		{
+			"Name":"MISSION2_TITLE",
+			"Description": "GENERIC_DESCRIPTION1",
+			"Difficulty": 1,
+			"NumParts": 5,
+			"Altitude": 5000,
+			"Payload": "PAYLOAD_AIR",
+			"Mission": "MISSION2_DESCRIPTION"
+		},
+		{
+			"Name":"MISSION3_TITLE",
+			"Description": "GENERIC_DESCRIPTION1",
+			"Difficulty": 2,
+			"NumParts": 8,
+			"Altitude": 8000,
+			"Payload": "PAYLOAD_AIR",
+			"Mission": "MISSION3_DESCRIPTION"
+		}
+  ]
+}

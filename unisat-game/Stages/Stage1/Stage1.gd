@@ -3,6 +3,7 @@ extends Node2D
 var startTime
 var partPrefab = preload("res://Stages/Stage1/Scenes/Part.tscn")
 func Start(json):
+	#SpawnParts(json)
 	for obj in json["PreplacedParts"]:
 		if obj["Preplaced"]:
 			var part : Part = $DragManager.find_node(obj["PartName"]) as Part
@@ -19,18 +20,13 @@ func _ready():
 	$AssembleButton/Label.text = global.local("ASSEMBLE")
 	$WinText/Button/Label.text = global.local("LAUNCH")
 	$WinText.text = global.local("CONGRATS")
-	
 
-func PreplaceParts():
-	for i in range(1, $DragManager.get_child_count()):
-		if $DragManager.get_child(i).preplaced:
-			var part : Part = $DragManager.get_child(i) as Part
-			for j in range(1, $Sockets.get_child_count()-1):
-				var sock = $Sockets.get_child(j)
-				if part.part_name == sock.part_name and not sock.Full():
-					part.PreplacePart($Sockets.get_child(j))
-					break
-	RearrangeParts()
+func SpawnParts(json):
+	for obj in json["Parts"]:
+		#var part : Part = $DragManager.find_node(obj["PartName"]) as Part
+		var part = partPrefab.instance()
+		print(obj["PartFile"])
+		
 
 func _on_Button_pressed():
 	var correct = true

@@ -1,0 +1,30 @@
+{
+	"Assembly": 
+	{
+		"PreplacedParts":
+		[
+			{"PartName": "Antenna","Preplaced": false},
+			{"PartName": "Frame1","Preplaced": false},
+			{"PartName": "Frame2","Preplaced": false},
+			{"PartName": "Top","Preplaced": false},
+			{"PartName": "Battery","Preplaced": false},
+			{"PartName": "Solar","Preplaced": false},
+			{"PartName": "Control","Preplaced": false},
+			{"PartName": "Air","Preplaced": false}
+		]
+	},
+	
+	"DataPath": "RU_Data0",
+	
+	"DataCollection": 
+	{
+		"Questions": 
+		[
+			{
+				"QuestionText": "QUESTION3",
+				"Answers": ["Q3A", "Q3B", "Q3C", "Q3D"]
+			}
+		]
+	},
+	"FinalMessage":"FINAL_MESSAGE3"
+}

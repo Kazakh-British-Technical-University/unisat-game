@@ -40,13 +40,13 @@ func SetupJSON(json):
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	var curQuestion = questions[rng.randi_range(0, questions.size()-1)]
-	$QuestionPanel/QuestionText.text = curQuestion["QuestionText"]
+	$QuestionPanel/QuestionText.text = global.local(curQuestion["QuestionText"])
 	
 	var answers = [0, 1, 2, 3]
 	var i = 0
 	while answers.size() > 0:
 		var answerInd = rng.randi_range(0, answers.size() - 1)
-		$QuestionPanel.get_child(i).get_child(0).text = curQuestion["Answers"][answers[answerInd]]
+		$QuestionPanel.get_child(i).get_child(0).text = global.local(curQuestion["Answers"][answers[answerInd]])
 		if (answers[answerInd] == 0):
 			$QuestionPanel.correctAnswer = i
 		answers.remove(answerInd)

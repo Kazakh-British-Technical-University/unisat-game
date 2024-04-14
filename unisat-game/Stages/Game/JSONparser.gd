@@ -1,7 +1,8 @@
 extends Node2D
 
 export var web = false
-
+var jsonCaller : Node2D
+var imageCaller : Node2D
 var dataFolder = "res://Data/"
 var jsonPath = ""
 var csvPath = ""
@@ -24,7 +25,8 @@ func _ready():
 		externalator.addGodotFunction('SendTrans',_trans_callback)
 		externalator.addGodotFunction('SendImage',_image_callback)
 
-func LoadJSON(filename):
+func LoadJSON(filename, caller):
+	jsonCaller = caller
 	jsonPath = dataFolder + filename
 	
 	if web:
@@ -38,7 +40,7 @@ func JSONfromFile():
 		var content = file.get_as_text()
 		file.close()
 		
-		ParseJSON(content, false)
+		ParseJSON(content)
 	else:
 		print("JSON read error " + jsonPath)
 		return null
@@ -48,19 +50,15 @@ func JSONfromWeb():
 	webPath.erase(0, 5)
 	webPath = "." + webPath
 	window.fetchJSONData(webPath)
-	#window.fetchImage("/Data/test.png")
-	
+
 func ProcessResponse(args):
 	#print("From Godot: received message: " + str(args[0]))
-	ParseJSON(str(args[0]), false)
+	ParseJSON(str(args[0]))
 
-func ParseJSON(json : String, isPart):
+func ParseJSON(json : String):
 	var parsed = JSON.parse(json).result
 	if (parsed != null):
-		if isPart:
-			pass
-		else:
-			$"..".Result(parsed)
+		jsonCaller.Result(parsed)
 	else:
 		print("JSON parse error " + jsonPath)
 
@@ -140,13 +138,14 @@ func LoadTranslations():
 		LoadTransWeb()
 		return
 	
-	var lines = []
 	var f = File.new()
 	f.open(dataFolder + "Translations.txt", File.READ)
 	while not f.eof_reached():
-		lines.append(f.get_csv_line(";"))
+		var line = f.get_csv_line(";")
+		var key = line[0]
+		line.remove(0)
+		global.dict[key] = line
 	f.close()
-	ExtractTranslations(lines)
 
 func LoadTransWeb():
 	var webPath = dataFolder + "Translations.csv"
@@ -155,21 +154,17 @@ func LoadTransWeb():
 	window.fetchTrans(webPath)
 
 func ProcessTrans(args):
-	var data = str(args[0])
-	var lines = data.split("\n")
-	ExtractTranslations(lines)
+	var parsed = JSON.parse(str(args[0])).result
 	
-func ExtractTranslations(lines):
-	for i in range(1, lines.size()):
-		var line
-		if web:
-			line = lines[i].split(";")
-		else:
-			line = lines[i]
+	if (parsed != null):
+		for i in range(1, parsed["Lines"].size()):
+			global.dict[parsed["Lines"][i]["key"]] = [parsed["Lines"][i]["EN"],parsed["Lines"][i]["RU"],parsed["Lines"][i]["KZ"]]
+	else:
+		print("JSON parse error " + dataFolder + "Translations.csv")
 
-		var key = line[0]
-		line.remove(0)
-		global.dict[key] = line
+func LoadImage(path, caller):
+	imageCaller = caller
+	window.fetchImage(path)
 
 func ProcessImage(args):
 	var img = Image.new()
@@ -177,12 +172,8 @@ func ProcessImage(args):
 	#var buffer = PoolByteArray()
 	#for i in range(srcArray.length):
 	#	buffer.append(srcArray[i])
-	print(args[0])
+	
 	img.load_png_from_buffer(srcArray)
 	var tex = ImageTexture.new()
 	tex.create_from_image(img)
-	$Sprite.texture = tex
-
-func ProcessPart(args):
-	var partInfo = args[0]
-	
+	return tex

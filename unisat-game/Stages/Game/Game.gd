@@ -25,9 +25,9 @@ func SetCSV(_sensorData):
 func LoadJSON():
 	match curLevel:
 		0:
-			$JSONparser.LoadJSON(langs[global.curLang] + "_ScenarioList.json")
+			$JSONparser.LoadJSON("ScenarioList.json", self)
 		1:
-			$JSONparser.LoadJSON(langs[global.curLang] + "_Scenario" + str(curScenario) + ".json")
+			$JSONparser.LoadJSON("Scenario" + str(curScenario) + ".json", self)
 
 func Result(json):
 	curJSON = json

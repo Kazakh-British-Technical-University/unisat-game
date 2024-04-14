@@ -3,7 +3,7 @@ extends Button
 var scenarioId = 0
 
 func SetButton(_text):
-	$Label.text = _text
+	$Label.text = global.local(_text)
 
 func _on_Button_pressed():
 	global.SFX(0)

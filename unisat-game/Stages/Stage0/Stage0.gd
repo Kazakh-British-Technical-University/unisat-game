@@ -51,10 +51,10 @@ func SelectScenario(id):
 	$DescriptionFrame/Difficulty.texture = load(diffIconsPaths[json["Scenarios"][id]["Difficulty"]])
 	$DescriptionFrame/Difficulty/Label.text = diffText
 	
-	$DescriptionFrame/DescriptionText.text = json["Scenarios"][id]["Description"]
+	$DescriptionFrame/DescriptionText.text = global.local(json["Scenarios"][id]["Description"])
 	$DescriptionFrame/PartsText.text = global.local("MISSING_PARTS") + ": " + str(json["Scenarios"][id]["NumParts"])
 	$DescriptionFrame/AltitudeText.text = global.local("LAUNCH_ALTITUDE") + ": " + str(json["Scenarios"][id]["Altitude"])
-	$DescriptionFrame/PayloadText.text = global.local("PAYLOAD") + ": " + json["Scenarios"][id]["Payload"]
+	$DescriptionFrame/PayloadText.text = global.local("PAYLOAD") + ": " + global.local(json["Scenarios"][id]["Payload"])
 	$DescriptionFrame/QuestionText.text = global.local("DIFFICULTY") + ": " + diffText
 
 func _on_GoButton_pressed():
@@ -62,7 +62,7 @@ func _on_GoButton_pressed():
 	curScreen = 2
 	$DescriptionFrame.visible = false
 	$TaskBg.visible = true
-	$TaskBg/MissionFrame/MissionText.text = json["Scenarios"][scenarioId]["Mission"]
+	$TaskBg/MissionFrame/MissionText.text = global.local(json["Scenarios"][scenarioId]["Mission"])
 
 func _on_StartButton_pressed():
 	global.SFX(0)

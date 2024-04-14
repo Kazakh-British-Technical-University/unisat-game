@@ -1,0 +1,97 @@
+﻿key;en;ru;kk_KZ
+DESCRIPTION;Scenario description;Описание сценария;Сценарий сипаттамасы
+MISSION;Game task;Задание игры;Ойын тапсырмасы
+GO;Go!;Поехали!;Кеттік!
+START_MISSION;Embark on a mission;Приступить к миссии;Миссияны бастау
+EASY;Easy;Простой;Жеңіл
+MEDIUM;Medium;Средний;Орташа
+HARD;Hard;Сложный;Қиын
+MISSING_PARTS;Missing parts;Деталей для сборки;Құрастыруға арналған бөлшектер
+LAUNCH_ALTITUDE;Launch altitude;Высота запуска;Іске қосу биіктігі
+PAYLOAD;Payload;Полезная нагрузка;Пайдалы жүктеме
+DIFFICULTY;Difficulty;Уровень сложности;Қиындық деңгейі
+ASSEMBLE;Assemble;Собрать;Жинау
+LAUNCH;Launch;Запустить;Іске қосу
+CONGRATS;Congratulations!;Поздравляем!;Құттықтаймыз!
+LAUNCH_SAT;Launch a nanosatellite;Запустить спутник;Спутникты ұшыру
+ALTITUDE;Altitude;Высота;Биіктік
+TASK_COMPLETE;You finished the task!;Вы справились с заданием!;Сіз тапсырманы сәтті орындадыңыз!
+END_SCREEN;Mission success!;Спутник успешно завершил свою миссию в атмосфере, а вы успешно справились с заданием! Попробуйте пройти это задание ещё раз, чтобы улучшить свой результат, или приступайте к следующей миссии!; 
+ASSEMBLY_TIME;Assembly time in seconds;Секунд потрачено на сборку;Құрастыруға жұмсалған секунд саны
+ASSEMBLY_WRONGS;Mistakes made during assembly;Количество ошибок при сборке;Құрастыру кезіндегі қателер саны
+QUESTION_TRIES;Number of wrong answers;Количество попыток ответа на вопрос;Сұраққа жауап беру әрекеттерінің саны:
+BACK_MENU;Back to menu;Вернуться в меню;Мәзірге оралу
+antenna1;Antenna systems;Антенная система ;Антенна жүйесі
+antenna2;The nanosatellite uses an ultrashort wave (UHF) antenna system.;На наноспутнике используется антенная система ультракоротковолнового (УКВ);Наноспутникте ультра қысқа толқынды (УҚТ) диапазондағы антенна жүйесі қолданылады.
+antenna3;A Yagi-type antenna system is used to receive signals on the Earth.;диапазона. Для приема сигналов на Земле используется антенная система типа Яги.;Жердегі сигналдарды қабылдау үшін Яга типті антенна жүйесі қолданылады.
+frame1;Nanosatellite body;Корпус наноспутника ;Наноспутник корпусы
+frame2;The body of the nanosatellite is made of special aluminum.;Корпус наноспутника выполняется из специального алюминия.;Наноспутниктің корпусы арнайы алюминийден жасалған.
+frame3;The body is assembled from two pairs of parts (side, end). M3 countersunk head screws are used to connect the body elements and mount the internal racks.;Корпус собирается из двух пар деталей (боковая, торцевая). Для соединения элементов корпуса и крепления внутренних стоек используются винты с потайной головкой М3.;Корпус екі бөліктен жиналады (бүйірлік, соңғы бөліктері). Корпус элементтерін қосу және ішкі тіректерді бекіту үшін М3 жасырын басы бар бұрандалар қолданылады.
+bat1;Electrical Power System ;Подсистема энергоснабжения;Энергия жабдықтау жүйесі
+bat2;Manages the electrical power from the solar panels.;Управляет электроэнергией от солнечных панелей. Отвечает за;Күн панельдерінен алынатын электр қуатын басқарады.
+bat3;Responsible for storing energy in the batteries and distributing electricity to the satellite subsystems. For this reason, it must have a very high reliability compared to other components of the satellite.;хранение энергии в батареях и распределяет электроэнергию по подсистемам спутника. По этой причине, она должна иметь очень высокую надежность.;Батареяларда энергияны сақтауға және электр энергиясын спутниктің ішкі жүйелеріне таратуға жауапты. Осы себепті, ол спутниктің басқа жүйелерімен салыстырғанда өте жоғары сенімділікке ие болуы керек.
+solar1;Solar panel;Cолнечная панель;Күн панелі
+solar2;It is an integral part of the electrical power system.;Являются составной частью системы энергоснабжения.;Энергиямен жабдықтау жүйесінің құрамдас бөлігі болып табылады.
+solar3;The size of the solar panels and the capacity of the batteries are determined based on the power consumption of a particular nanosatellite mission. ;Размер солнечных панелей и емкость аккумуляторных батарей определяются исходя их энергопотребления конкретной миссии спутника. ;Күн панельдерінің мөлшері мен аккумуляторлық батареялардың сыйымдылығы олардың спутниктің белгілі бір миссиясының қуат тұтынуына байланысты анықталады.
+control1;Onboard Computer ;Бортовой компьютер;Борттық компьютер 
+control2;It manages data transmission and storage, and processes signals for transmission to Earth.;Управляет передачей и хранением данных, обрабатывает;Деректерді беру мен сақтауды басқарады, Жерге жіберілетін сигналдарды өңдейді.
+control3;It also has a communication system that is responsible for real-time information exchange between the satellite and the Earth.;сигналы для передачи на Землю. В ней также есть система связи, которая отвечает за обмен информации между спутником и Землей в режиме реального времени.;Сондай-ақ, компьютермен қоса нақты уақыт режиміндегі байланыс жүйесі бар. Ол наноспутник пен Жер арасындағы ақпарат алмасуына жауап береді.
+air1;Payload Subsystem;Подсистема полезной нагрузки ;Пайдалы жүктеме жүйесі
+air2;The satellite mission is closely related to the payload on board.;Миссия спутника тесно связана с полезной нагрузкой на борту. ;Миссия борттың пайдалы жүктемесімен тығыз байланысты.
+air3;The air pollution sensor, which measures the concentration of microparticles PM2.5, PM10 dangerous for human health, was selected as the payload in this mission.;В качестве полезной нагрузки в этой миссии был выбран датчик загрязненности воздуха, который измеряет концентрацию опасных для здоровья человека микрочастиц PM2.5, PM10.;Бұл миссияда пайдалы жүктеме ретінде адам денсаулығына қауіпті PM2.5 және PM10 микробөлшектерінің концентрациясын өлшейтін ауаның ластану сенсоры таңдалды.
+top1;TOP subsystem;Подсистема ТОП;ТОП ішкі жүйесі
+top2;The TOP subsystem is unique to the UniSat nanosatellite.;Подсистема ТОП присуща только наноспутнику UniSat. В других спутниках может;ТОП ішкі жүйесі тек UniSat наноспутнигіне тән.
+top3;Other satellites may lack this subsystem. There is an RBF (Remove Before Flight) key and a GPS antenna. Also, the EPS subsystem is charged through this board.;отсутствовать данная подсистема. Тут расположен ключ RBF (Remote Before Flight) и антенна GPS. Также заряд подсистемы EPS происходит через данную плату.;Басқа спутниктерде бұл ішкі жүйе болмауы мүмкін. Осы жүйеде RBF (Remove Before Flight) кілті мен GPS антеннасы орналасқан. Және EPS ішкі жүйесінің заряды осы тақта арқылы жүреді.
+MISSION1_TITLE;First mission;Миссия 1;Бірінші миссия
+MISSION2_TITLE;Second mission;Миссия 2;Екінші миссия
+MISSION3_TITLE;Third mission;Миссия 3;Үшінші миссия
+GENERIC_DESCRIPTION1;In this scenario you will need to help Belka and Strelka send a pre-assembled nanosatellite into the atmosphere to test its performance.;В этом сценарии вам нужно будет помочь Белке и Стрелке отправить в атмосферу предсобранный наноспутник, чтобы протестировать его работу.;Бұл сценарийде сіз Белка мен Стрелкаға жаңа құрастырылған наноспутниктің жұмысын тексеру үшін оны атмосфераға жіберуге көмектесуіңіз керек.
+PAYLOAD_AIR;Air quality sensor;Датчик качества воздуха;Ауа сапасы сенсоры
+MISSION1_DESCRIPTION;"The Committee for the Protection of Humans reports a mysterious withering of forests near the equator. To determine the cause, we must collect data from the region. First, let's find out the maximum altitude of our satellite. Humanity and the planet's animals rely on you!
+
+With ethereal greetings,
+Captain Belka";"Комитет Охраны Людей сообщает о загадочном увядании лесов в районе экватора. Для определения причин мы должны собрать данные из этого региона. Для начала давайте выясним предельную высоту работы нашего спутника.  Человечество и животные планеты полагаются на вас!
+
+С неземным приветом,
+Капитан Белка";"Адамдарды Қорғау Комитеті экватор аймағындағы ормандардың жұмбақты түрде солуын хабарлайды. Себептерді анықтау үшін біз осы аймақтан деректерді жинауымыз керек. Бастау үшін спутниктің жұмысының шекті биіктігін анықтайық. Адамзат пен планетаның жануарлары сізге сенеді!
+
+Шынайы сәлеммен,
+Капитан Белка "
+QUESTION1;At what altitude does the air temperature drop to -20 degrees?;На какой высоте температура воздуха падает до -20 градусов?;Ауа температурасы қандай биіктікте -20 градусқа дейін төмендейді?
+Q1A;2950 m;2950 м;2950 м
+Q1B;3000 m;3000 м;3000 м
+Q1C;1860 m;1860 м;1860 м
+Q1D;1130 m;1130 м;1130 м
+FINAL_MESSAGE1;Well done! Now we know the limits of our nanosatellite and we can start investigating!;Отличная работа! Теперь мы знаем предельные возможности нашего наноспутника и смело можем начинать расследование!;Керемет жұмыс! Біз наноспутниктің шекті мүмкіндіктерін білеміз. Енді зерттеулерімізді бастай аламыз!
+MISSION2_DESCRIPTION;"Our beetle reconnaissance team has discovered that the cause of plant wilting is related to photosynthesis. Your task is to find out what factors may influence this process in the specified region. Explore and report your results to develop further measures to protect the vegetation.
+
+With an ethereal greeting,
+Professor Strelka";"Наш разведовательный отряд жуков обнаружил, что причина увядания растений связана с фотосинтезом. Ваша задача - выяснить, какие факторы могут влиять на этот процесс в указанном регионе. Разведайте и сообщите результаты для разработки дальнейших мер по защите растительности.
+
+С неземным приветом,
+Профессор Стрелка";"Біздің қоңыздар барлау тобы өсімдіктердің қурап қалуының себебі фотосинтезге байланысты екенін анықтады. Сіздің тапсырмаңыз - аталған аймақтағы бұл процеске қандай факторлар әсер етуі мүмкін екенін анықтау. Өсімдіктерді қорғау бойынша қосымша шараларын әзірлеу үшін нәтижелерді зерттеп, бізге хабарлаңыз.
+
+Шынайы сәлеммен,
+Профессор Стрелка"
+QUESTION2;At what altitude is the maximum air pollution with PM10 particles observed?;На какой высоте наблюдается максимальное загрязнение воздуха частицами PM 10?;PM10 бөлшектерімен ауаның ең көп ластануы қандай биіктікте байқалады?
+Q2A;168 m;168 м;168 м
+Q2B;4412 m;4412 м;4412 м
+Q2C;4960 m;4960 м;4960 м
+Q2D;2311 m;2311 м;2311 м
+FINAL_MESSAGE2;Thanks to your excellent work, we have identified air pollution from PM10 particles! This is what caused the wilting, because these particles negatively affect photosynthesis and overall plant health!;Благодаря вашей отменной работе мы выявили загрязнение воздуха частицами категории PM10! Именно оно стало причиной увядания, ведь эти частицы негативно влияют на фотосинтез и общее здоровье растений! ;Сіздің тамаша жұмысыңыздың арқасында біз PM10 санатындағы бөлшектерімен ауаның ластануын анықтадық! Бұл солып қалудың себебі болды, өйткені бұл бөлшектер фотосинтезге және өсімдіктердің жалпы денсаулығына теріс әсер етеді!
+MISSION3_DESCRIPTION;"The problem is more serious than it seems! PM10 and PM2.5 are not only harmful to plants, but also to other living organisms. PM2.5 particles can penetrate deeper into the respiratory tract and therefore have more serious effects than PM10. Report at what altitude PM2.5 concentrations are highest.
+
+With ethereal regards,
+General Monkey";"Проблема серьёзнее, чем казалось! PM10 и PM2.5 наносят вред не только растениям, но и другим живым организмам. Частицы PM2.5 могут проникать глубже в дыхательные пути и поэтому имеют более серьезное воздействие, чем PM10. Сообщите, на какой высоте концентрация PM2.5 максимальна.
+
+С неземным приветом,
+Генерал Обезьянка";"Мәселе әлдеқайда маңыздырақ болып шықты! PM10 және PM2.5 өсімдіктерге ғана емес, басқа тірі организмдерге де зиян тигізеді. PM2.5 бөлшектері тыныс алу жолдарына тереңірек ене алады, сондықтан PM10-ға қарағанда неғұрлым ауыр әсер етеді. Қай биіктікте PM2.5 концентрациясының ең көп екенін аңықтап, хабарлаңыз.
+
+Шынайы сәлеммен,
+Генерал Маймыл"
+QUESTION3;At what altitude is the maximum air pollution with PM2.5 particles observed?;На какой высоте концентрация PM2.5 максимальна?;PM2.5 бөлшектерімен ауаның ең көп ластануы қандай биіктікте байқалады?
+Q3A;7935 m;7935 м;7935 м
+Q3B;8000 m;8000 м;8000 м
+Q3C;427 m;427 м;427 м
+Q3D;6554 m;6554 м;6554 м
+FINAL_MESSAGE3;Bravo, colleagues! A sharp spike of PM2.5 has been detected at a height of 7935 meters, indicating that the plant has emitted harmful particles. The collected data will help us to find the source of pollution and demand modernization of filtration systems.;Браво, коллеги! На высоте 7935 метров обнаружен резкий всплеск РМ 2.5, указывающий на выброс вредных частиц заводом. Собранные данные помогут нам найти источник загрязнения и требовать модернизации систем фильтрации.;Браво, әріптестер! 7935 метр биіктікте RM 2.5 күрт өсуінің себебі зауыттың зиянды бөлшектердің шығарылуы екені анықталды. Жиналған деректер ластану көзін табуға және сүзу жүйелерін жаңартуды талап етуге көмектеседі.

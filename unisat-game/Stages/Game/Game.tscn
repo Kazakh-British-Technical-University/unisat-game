@@ -20,6 +20,7 @@ script = ExtResource( 3 )
 
 [node name="JSONparser" type="Node2D" parent="."]
 script = ExtResource( 1 )
+web = true
 
 [node name="LevelContainer" type="Node2D" parent="."]
 
