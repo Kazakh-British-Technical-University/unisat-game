@@ -7,7 +7,7 @@ var plugged_pos : Vector2
 var order = 0
 export var preplaced = true
 
-export var part_name = "antenna"
+export var part_name = "none"
 
 func _ready():
 	initPos = global_position
@@ -33,7 +33,7 @@ func DragDone():
 		body_ref.occupy(true, self)
 		order = 10 - body_ref.order
 		
-		for i in range(8, 0, -1):
+		for i in range(get_parent().get_child_count()-1, 0, -1):
 			#print("i = " + str(i))
 			var temp = $"../../Sockets".get_child(i)
 			if temp.part_ref != null:
@@ -87,3 +87,24 @@ func GetTexture():
 
 func GetOffset():
 	return $PlugOut.position
+
+var json : Dictionary
+func LoadIcons(input):
+	json = input
+	LoadNextImage()
+
+var oneIconLoaded = false
+func LoadNextImage():
+	if oneIconLoaded:
+		global.LoadImage(json["IconFlat"], self)
+	else:
+		global.LoadImage(json["IconIso"], self)
+	
+func ImageResult(tex):
+	if oneIconLoaded:
+		$PlugOut.texture = tex
+		get_parent().get_parent().LoadNextPart()
+	else:
+		$PlugIn.texture = tex
+		oneIconLoaded = true
+		LoadNextImage()

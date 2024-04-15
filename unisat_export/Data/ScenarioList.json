@@ -7,7 +7,8 @@
 			"NumParts": 3,
 			"Altitude": 3000,
 			"Payload": "PAYLOAD_AIR",
-			"Mission": "MISSION1_DESCRIPTION"
+			"Mission": "MISSION1_DESCRIPTION",
+			"CharacterPortrait":"./Data/Characters/belka.png"
 		},
 		{
 			"Name":"MISSION2_TITLE",
@@ -16,7 +17,8 @@
 			"NumParts": 5,
 			"Altitude": 5000,
 			"Payload": "PAYLOAD_AIR",
-			"Mission": "MISSION2_DESCRIPTION"
+			"Mission": "MISSION2_DESCRIPTION",
+			"CharacterPortrait":"./Data/Characters/strelka.png"
 		},
 		{
 			"Name":"MISSION3_TITLE",
@@ -25,7 +27,8 @@
 			"NumParts": 8,
 			"Altitude": 8000,
 			"Payload": "PAYLOAD_AIR",
-			"Mission": "MISSION3_DESCRIPTION"
+			"Mission": "MISSION3_DESCRIPTION",
+			"CharacterPortrait":"./Data/Characters/monkey.png"
 		}
   ]
 }

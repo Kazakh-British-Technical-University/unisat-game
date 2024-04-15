@@ -56,6 +56,7 @@ func SelectScenario(id):
 	$DescriptionFrame/AltitudeText.text = global.local("LAUNCH_ALTITUDE") + ": " + str(json["Scenarios"][id]["Altitude"])
 	$DescriptionFrame/PayloadText.text = global.local("PAYLOAD") + ": " + global.local(json["Scenarios"][id]["Payload"])
 	$DescriptionFrame/QuestionText.text = global.local("DIFFICULTY") + ": " + diffText
+	global.LoadImage(json["Scenarios"][scenarioId]["CharacterPortrait"], self)
 
 func _on_GoButton_pressed():
 	global.SFX(0)
@@ -63,6 +64,9 @@ func _on_GoButton_pressed():
 	$DescriptionFrame.visible = false
 	$TaskBg.visible = true
 	$TaskBg/MissionFrame/MissionText.text = global.local(json["Scenarios"][scenarioId]["Mission"])
+
+func ImageResult(tex):
+	$TaskBg/MissionFrame/Questgiver.texture = tex
 
 func _on_StartButton_pressed():
 	global.SFX(0)

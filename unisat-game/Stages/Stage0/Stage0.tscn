@@ -145,8 +145,8 @@ texture = ExtResource( 4 )
 position = Vector2( 52, -10 )
 texture = ExtResource( 5 )
 
-[node name="Dog" type="Sprite" parent="TaskBg/MissionFrame"]
-position = Vector2( -331, 237 )
+[node name="Questgiver" type="Sprite" parent="TaskBg/MissionFrame"]
+position = Vector2( -369, 237 )
 texture = ExtResource( 9 )
 
 [node name="MissionText" type="Label" parent="TaskBg/MissionFrame"]

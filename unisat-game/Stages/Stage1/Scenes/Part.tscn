@@ -17,19 +17,18 @@ load_path = "res://.import/AntennaIso.png-b338b9fb8da16c712b223c61183f9efd.stex"
 radius = 26.0
 
 [node name="Antenna" type="Area2D"]
+z_index = 5
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="PlugOut" type="Sprite" parent="."]
-position = Vector2( 18, -24 )
 z_index = 5
 texture = SubResource( 2 )
 
 [node name="PlugIn" type="Sprite" parent="."]
 visible = false
-position = Vector2( 11, -27 )
 z_index = 5
 texture = SubResource( 3 )
 

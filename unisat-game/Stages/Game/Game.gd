@@ -14,7 +14,7 @@ var level3 = preload("res://Stages/Stage3/Scenes/Stage3.tscn")
 var level4 = preload("res://Stages/Stage4/Stage4.tscn")
 
 func _ready():
-	_on_SoundButton_pressed()
+	#_on_SoundButton_pressed()
 	$JSONparser.LoadTranslations()
 	yield(get_tree().create_timer(0.3),"timeout")
 	LoadJSON()
@@ -25,11 +25,17 @@ func SetCSV(_sensorData):
 func LoadJSON():
 	match curLevel:
 		0:
-			$JSONparser.LoadJSON("ScenarioList.json", self)
+			if $JSONparser.web:
+				$JSONparser.LoadJSON("./Data/ScenarioList.json", self)
+			else:
+				$JSONparser.LoadJSON("ScenarioList.json", self)
 		1:
-			$JSONparser.LoadJSON("Scenario" + str(curScenario) + ".json", self)
+			if $JSONparser.web:
+				$JSONparser.LoadJSON("./Data/Scenario" + str(curScenario) + ".json", self)
+			else:
+				$JSONparser.LoadJSON("Scenario" + str(curScenario) + ".json", self)
 
-func Result(json):
+func JsonResult(json):
 	curJSON = json
 	
 	match curLevel:
@@ -74,7 +80,7 @@ func NextLevel():
 		global.questionTries = 0
 		LoadJSON()
 	else:
-		Result(curJSON)
+		JsonResult(curJSON)
 
 var soundOn = true
 func _on_SoundButton_pressed():

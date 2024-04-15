@@ -1,7 +1,5 @@
 extends Node2D
 
-var spriteFolder = "res://Levels/Level1/Sprites/Parts/"
-
 func ShowPopup(title, part_ref):
 	$"../DragManager".inPopup = true
 	

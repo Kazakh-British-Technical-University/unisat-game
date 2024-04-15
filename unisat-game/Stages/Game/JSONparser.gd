@@ -30,7 +30,7 @@ func LoadJSON(filename, caller):
 	jsonPath = dataFolder + filename
 	
 	if web:
-		JSONfromWeb()
+		window.fetchJSONData(filename)
 	else:
 		JSONfromFile()
 
@@ -45,12 +45,6 @@ func JSONfromFile():
 		print("JSON read error " + jsonPath)
 		return null
 
-func JSONfromWeb():
-	var webPath = jsonPath
-	webPath.erase(0, 5)
-	webPath = "." + webPath
-	window.fetchJSONData(webPath)
-
 func ProcessResponse(args):
 	#print("From Godot: received message: " + str(args[0]))
 	ParseJSON(str(args[0]))
@@ -58,7 +52,7 @@ func ProcessResponse(args):
 func ParseJSON(json : String):
 	var parsed = JSON.parse(json).result
 	if (parsed != null):
-		jsonCaller.Result(parsed)
+		jsonCaller.JsonResult(parsed)
 	else:
 		print("JSON parse error " + jsonPath)
 
@@ -169,11 +163,11 @@ func LoadImage(path, caller):
 func ProcessImage(args):
 	var img = Image.new()
 	var srcArray = JavaScript.create_object("Uint8Array", args[0])
-	#var buffer = PoolByteArray()
-	#for i in range(srcArray.length):
-	#	buffer.append(srcArray[i])
+	var buffer = PoolByteArray()
+	for i in range(srcArray.length):
+		buffer.append(srcArray[i])
 	
-	img.load_png_from_buffer(srcArray)
+	img.load_png_from_buffer(buffer)
 	var tex = ImageTexture.new()
 	tex.create_from_image(img)
-	return tex
+	imageCaller.ImageResult(tex)

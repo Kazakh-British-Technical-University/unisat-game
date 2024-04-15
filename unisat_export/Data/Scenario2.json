@@ -1,20 +1,20 @@
 {
 	"Assembly": 
 	{
-		"PreplacedParts":
+		"Parts":
 		[
-			{"PartName": "Antenna","Preplaced": false},
-			{"PartName": "Frame1","Preplaced": false},
-			{"PartName": "Frame2","Preplaced": false},
-			{"PartName": "Top","Preplaced": false},
-			{"PartName": "Battery","Preplaced": false},
-			{"PartName": "Solar","Preplaced": false},
-			{"PartName": "Control","Preplaced": false},
-			{"PartName": "Air","Preplaced": false}
+			{"PartFile":"./Data/Parts/Antenna.json", "Preplaced": false},
+			{"PartFile":"./Data/Parts/Frame.json", "Preplaced": false},
+			{"PartFile":"./Data/Parts/Top.json", "Preplaced": false},
+			{"PartFile":"./Data/Parts/Battery.json", "Preplaced": false},
+			{"PartFile":"./Data/Parts/Air.json", "Preplaced": false},
+			{"PartFile":"./Data/Parts/Frame.json", "Preplaced": false},
+			{"PartFile":"./Data/Parts/Control.json", "Preplaced": false},
+			{"PartFile":"./Data/Parts/Solar.json", "Preplaced": false}
 		]
 	},
 	
-	"DataPath": "RU_Data0",
+	"DataPath": "./Data/RU_Data0.csv",
 	
 	"DataCollection": 
 	{

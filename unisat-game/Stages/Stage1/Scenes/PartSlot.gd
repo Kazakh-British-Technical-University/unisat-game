@@ -1,8 +1,8 @@
 extends StaticBody2D
 
-export var part_name = "antenna"
+var part_name = "none"
 
-export(int) var order = 0
+var order = 0
 
 var part_ref : Part = null
 

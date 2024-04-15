@@ -2,18 +2,14 @@ extends Node2D
 
 var startTime
 var partPrefab = preload("res://Stages/Stage1/Scenes/Part.tscn")
+var partsJson : Dictionary
+
 func Start(json):
-	#SpawnParts(json)
-	for obj in json["PreplacedParts"]:
-		if obj["Preplaced"]:
-			var part : Part = $DragManager.find_node(obj["PartName"]) as Part
-			
-			for j in range(1, $Sockets.get_child_count()-1):
-				var sock = $Sockets.get_child(j)
-				if part.part_name == sock.part_name and not sock.Full():
-					part.PreplacePart($Sockets.get_child(j))
-					break
-	RearrangeParts()
+	partsJson = json
+	partNum = json["Parts"].size()
+	for i in range(partNum):
+		positions.push_back(i)
+	LoadNextPart()
 
 func _ready():
 	startTime = Time.get_ticks_msec()
@@ -21,17 +17,47 @@ func _ready():
 	$WinText/Button/Label.text = global.local("LAUNCH")
 	$WinText.text = global.local("CONGRATS")
 
-func SpawnParts(json):
-	for obj in json["Parts"]:
-		#var part : Part = $DragManager.find_node(obj["PartName"]) as Part
-		var part = partPrefab.instance()
-		print(obj["PartFile"])
-		
+
+var partNum = 0
+var loadedParts = 0
+func LoadNextPart():
+	if (loadedParts < partNum):
+		global.LoadJson(partsJson["Parts"][loadedParts]["PartFile"], self)
+	else:
+		$Sockets.SetupSockets($DragManager)
+		PreplaceParts()
+
+var rng = RandomNumberGenerator.new()
+var positions = []
+func JsonResult(json):
+	var curPart : Part
+	curPart = partPrefab.instance() as Part
+	curPart.part_name = str(json["PartName"])
+	curPart.name = "Part " + str(loadedParts)
+	$DragManager.add_child(curPart)
+	curPart.preplaced = partsJson["Parts"][loadedParts]["Preplaced"]
+	curPart.LoadIcons(json)
+	var randInd = rng.randi_range(0, positions.size()-1)
+	curPart.position = Vector2(100 + positions[randInd] * 720 / (partNum - 1), 600 + rng.randf_range(-150, 150))
+	curPart.rotation_degrees = rng.randf_range(0, 360)
+	positions.remove(randInd)
+	curPart._ready()
+	loadedParts += 1
+
+func PreplaceParts():
+	for i in range(1, $DragManager.get_child_count()):
+		if $DragManager.get_child(i).preplaced:
+			for j in range(1, $Sockets.get_child_count()):
+					var sock = $Sockets.get_child(j)
+					if $DragManager.get_child(i).part_name == sock.part_name and not sock.Full():
+						$DragManager.get_child(i).PreplacePart($Sockets.get_child(j))
+						break
+	RearrangeParts()
 
 func _on_Button_pressed():
 	var correct = true
 	var wrongs = []
-	for i in range(8, 0, -1):
+	for i in range(partNum, 0, -1):
 			var temp = $Sockets.get_child(i)
 			if temp.part_ref != null:
 				if temp.part_name != temp.part_ref.part_name:
@@ -63,7 +89,7 @@ func TryAssembly():
 	tween.tween_callback(self, "EndTween")
 
 func RearrangeParts():
-	for i in range(8, 0, -1):
+	for i in range(partNum, 0, -1):
 			var temp = $Sockets.get_child(i)
 			if temp.part_ref != null:
 				$DragManager.move_child(temp.part_ref, $DragManager.get_child_count() - 1)

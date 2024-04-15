@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/once-in-paris-168895.mp3-e01b8ad4bb012ca6e478bc9ae7a38f76.mp3str"
+
+[deps]
+
+source_file="res://Stages/Game/Sounds/once-in-paris-168895.mp3"
+dest_files=[ "res://.import/once-in-paris-168895.mp3-e01b8ad4bb012ca6e478bc9ae7a38f76.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

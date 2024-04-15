@@ -1,7 +1,5 @@
 {
-	"Text1":"antenna1",
-	"Text2":"antenna2",
-	"Text3":"antenna3",
+	"PartName":"antenna",
 	"IconFlat":"./Data/Parts/Antenna.png",
 	"IconIso":"./Data/Parts/AntennaIso.png"
 }

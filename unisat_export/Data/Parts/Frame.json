@@ -1,7 +1,5 @@
 {
-	"Text1":"frame1",
-	"Text2":"frame2",
-	"Text3":"frame3",
+	"PartName":"frame",
 	"IconFlat":"./Data/Parts/frame2.png",
 	"IconIso":"./Data/Parts/frame2Iso.png"
 }

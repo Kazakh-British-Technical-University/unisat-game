@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Stages/Stage1/Sprites/Parts/solar_frontIso.png" type="Texture" id=1]
 [ext_resource path="res://Stages/Stage1/Sprites/Parts/solar_back1Iso.png" type="Texture" id=2]
@@ -12,15 +12,8 @@
 [ext_resource path="res://Fonts/FiraSansBlack60.tres" type="DynamicFont" id=10]
 [ext_resource path="res://Fonts/RobotoRegular28.tres" type="DynamicFont" id=11]
 [ext_resource path="res://Stages/Stage1/Stage1.gd" type="Script" id=12]
-[ext_resource path="res://Stages/Stage1/Scenes/ExplicitParts/Solar.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Stages/Stage1/Scenes/ExplicitParts/Frame.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Stages/Stage1/Scenes/Popup.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Stages/Stage1/Scenes/ExplicitParts/TOP.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Stages/Stage1/Scenes/ExplicitParts/Bat.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Stages/Stage1/Scenes/ExplicitParts/Air.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Stages/Stage1/Scenes/ExplicitParts/Control.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Stages/Stage1/Scenes/ExplodedView.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Stages/Stage1/Scenes/ExplicitParts/Antenna.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Stages/Stage1/Scenes/DragManager.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Stages/Stage1/Sprites/Parts/solar_bot_Iso.png" type="Texture" id=23]
 
@@ -103,47 +96,6 @@ position = Vector2( 204, 291 )
 texture = ExtResource( 3 )
 
 [node name="DragManager" parent="." instance=ExtResource( 22 )]
-
-[node name="Antenna" parent="DragManager" instance=ExtResource( 21 )]
-position = Vector2( 150, 753 )
-rotation = 2.54437
-z_index = 5
-
-[node name="Frame1" parent="DragManager" instance=ExtResource( 14 )]
-position = Vector2( 317, 680 )
-rotation = -0.261799
-z_index = 5
-
-[node name="Frame2" parent="DragManager" instance=ExtResource( 14 )]
-position = Vector2( 734, 548 )
-rotation = 1.0472
-z_index = 5
-
-[node name="Battery" parent="DragManager" instance=ExtResource( 17 )]
-position = Vector2( 628, 563 )
-rotation = 0.523598
-z_index = 5
-preplaced = false
-
-[node name="Solar" parent="DragManager" instance=ExtResource( 13 )]
-position = Vector2( 587, 766 )
-rotation = 1.30237
-z_index = 5
-
-[node name="Control" parent="DragManager" instance=ExtResource( 19 )]
-position = Vector2( 185, 527 )
-rotation = 0.785397
-z_index = 5
-
-[node name="Air" parent="DragManager" instance=ExtResource( 18 )]
-position = Vector2( 739, 719 )
-rotation = 0.261799
-z_index = 5
-
-[node name="Top" parent="DragManager" instance=ExtResource( 16 )]
-position = Vector2( 383, 482 )
-rotation = 0.686322
-z_index = 5
 
 [node name="AssembleButton" type="Button" parent="."]
 visible = false
