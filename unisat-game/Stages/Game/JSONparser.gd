@@ -11,6 +11,7 @@ var _my_js_callback = JavaScript.create_callback(self, "ProcessResponse")
 var _csv_callback = JavaScript.create_callback(self, "ProcessCSV")
 var _trans_callback = JavaScript.create_callback(self, "ProcessTrans")
 var _image_callback = JavaScript.create_callback(self, "ProcessImage")
+var _lang_callback = JavaScript.create_callback(self, "SetLanguage")
 var externalator = JavaScript.get_interface("externalator")
 var window = JavaScript.get_interface("window")
 
@@ -24,6 +25,7 @@ func _ready():
 		externalator.addGodotFunction('SendCSV',_csv_callback)
 		externalator.addGodotFunction('SendTrans',_trans_callback)
 		externalator.addGodotFunction('SendImage',_image_callback)
+		externalator.addGodotFunction('SetLanguage',_lang_callback)
 
 func LoadJSON(filename, caller):
 	jsonCaller = caller
@@ -171,3 +173,17 @@ func ProcessImage(args):
 	var tex = ImageTexture.new()
 	tex.create_from_image(img)
 	imageCaller.ImageResult(tex)
+
+func GetLanguage():
+	window.getURLparam("lang")
+
+func SetLanguage(args):
+	var lang = str(args[0])
+	print(lang)
+	match lang:
+		"en": 
+			global.curLang = 0
+		"ru": 
+			global.curLang = 1
+		"kz": 
+			global.curLang = 2

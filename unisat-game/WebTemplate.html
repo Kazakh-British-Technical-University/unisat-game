@@ -160,6 +160,13 @@
 					)
 			}
 			
+			function getURLparam(name) 
+			{
+				const queryString = window.location.search;
+				const urlParams = new URLSearchParams(queryString);
+				godotFunctions.SetLanguage(urlParams.get(name));
+			}
+			
 			window.godotFunctions = {};
 			window.externalator = {
 				addGodotFunction: (n,f) => {

@@ -15,6 +15,10 @@ var level4 = preload("res://Stages/Stage4/Stage4.tscn")
 
 func _ready():
 	#_on_SoundButton_pressed()
+	$JSONparser.GetLanguage()
+	
+	# resolution
+	
 	$JSONparser.LoadTranslations()
 	yield(get_tree().create_timer(0.3),"timeout")
 	LoadJSON()
