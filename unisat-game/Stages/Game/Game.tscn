@@ -30,18 +30,23 @@ icon_align = 1
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+volume_db = -10.0
 autoplay = true
 
 [node name="sfx1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+volume_db = -10.0
 
 [node name="sfx2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
+volume_db = -10.0
 
 [node name="sfx3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+volume_db = -10.0
 
 [node name="sfx4" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
+volume_db = -10.0
 
 [connection signal="pressed" from="SoundButton" to="." method="_on_SoundButton_pressed"]
