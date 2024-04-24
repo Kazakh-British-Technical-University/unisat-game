@@ -6,7 +6,9 @@ var sensorData = []
 var curScene : Node
 var curScenario = 0
 var curLevel = 0
+var curScenarioName = ""
 
+var langs = ["EN", "RU", "KZ"]
 var level0 = preload("res://Stages/Stage0/Stage0.tscn")
 var level1 = preload("res://Stages/Stage1/Stage1.tscn")
 var level2 = preload("res://Stages/Stage2/Stage2.tscn")
@@ -16,11 +18,10 @@ var level4 = preload("res://Stages/Stage4/Stage4.tscn")
 func _ready():
 	#_on_SoundButton_pressed()
 	$JSONparser.GetLanguage()
-	
-	# resolution
-	
+	yield(get_tree().create_timer(0.1),"timeout")
+		
 	$JSONparser.LoadTranslations()
-	yield(get_tree().create_timer(0.3),"timeout")
+	yield(get_tree().create_timer(0.2),"timeout")
 	LoadJSON()
 
 func SetCSV(_sensorData):
@@ -42,6 +43,12 @@ func LoadJSON():
 func JsonResult(json):
 	curJSON = json
 	
+	if $JSONparser.web:
+		if curLevel == 0:
+			$JSONparser.SendPassEvent("GameLaunched", langs[global.curLang], curLevel, soundOn)
+		else:
+			$JSONparser.SendPassEvent(curScenarioName, langs[global.curLang], curLevel, soundOn)
+		
 	match curLevel:
 		0:
 			curScene = level0.instance()
@@ -71,6 +78,7 @@ func JsonResult(json):
 
 func StartScenario(id):
 	curScenario = id
+	curScenarioName = global.local(curJSON["Scenarios"][curScenario]["Name"])
 	curLevel = 1
 	LoadJSON()
 
@@ -115,9 +123,3 @@ func SFX(id):
 		3:
 			$sfx4.play()
 
-var langs = ["EN", "RU", "KZ"]
-func _on_LanguageButton_pressed():
-	global.curLang += 1
-	if (global.curLang == 3):
-		global.curLang = 0
-	$LanguageButton/Label.text = langs[global.curLang]

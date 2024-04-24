@@ -159,6 +159,8 @@ func ProcessTrans(args):
 		print("JSON parse error " + dataFolder + "Translations.csv")
 
 func LoadImage(path, caller):
+	if not web:
+		return
 	imageCaller = caller
 	window.fetchImage(path)
 
@@ -175,7 +177,8 @@ func ProcessImage(args):
 	imageCaller.ImageResult(tex)
 
 func GetLanguage():
-	window.getURLparam("lang")
+	if web:
+		window.getURLparam("lang")
 
 func SetLanguage(args):
 	var lang = str(args[0])
@@ -187,3 +190,21 @@ func SetLanguage(args):
 			global.curLang = 1
 		"kz": 
 			global.curLang = 2
+
+func SendPassEvent(scenarioName, lang, stage, sound):
+	if not web:
+		return
+	
+	var dict : Dictionary = {}
+	dict["name"] = scenarioName
+	dict["lang"] = lang
+	dict["stage"] = stage
+	dict["sound"] = sound
+	
+	window.SendPassEvent(JSON.print(dict))
+
+func SendStats(data):
+	if not web:
+		return
+	data["name"] = get_parent().curScenarioName
+	window.SendStatsEvent(JSON.print(data))

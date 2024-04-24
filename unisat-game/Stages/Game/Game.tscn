@@ -1,9 +1,7 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Stages/Game/JSONparser.gd" type="Script" id=1]
-[ext_resource path="res://Fonts/RobotoRegular28.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Stages/Game/Game.gd" type="Script" id=3]
-[ext_resource path="res://Stages/Game/Sprites/lang_button.png" type="Texture" id=4]
 [ext_resource path="res://Stages/Game/Sounds/once-in-paris-168895.mp3" type="AudioStream" id=5]
 [ext_resource path="res://Stages/Game/Sprites/sound_on.png" type="Texture" id=6]
 [ext_resource path="res://Stages/Game/Sounds/clicking_dot.mp3" type="AudioStream" id=7]
@@ -12,8 +10,6 @@
 [ext_resource path="res://Stages/Game/Sounds/success.mp3" type="AudioStream" id=10]
 
 [sub_resource type="StyleBoxEmpty" id=2]
-
-[sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 3 )
@@ -32,26 +28,6 @@ icon = ExtResource( 6 )
 flat = true
 icon_align = 1
 
-[node name="LanguageButton" type="Button" parent="."]
-visible = false
-margin_left = 851.0
-margin_right = 919.0
-margin_bottom = 62.0
-custom_styles/focus = SubResource( 1 )
-icon = ExtResource( 4 )
-flat = true
-icon_align = 1
-
-[node name="Label" type="Label" parent="LanguageButton"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 58.0
-margin_bottom = 52.0
-custom_fonts/font = ExtResource( 2 )
-text = "RU"
-align = 1
-valign = 1
-
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 autoplay = true
@@ -69,4 +45,3 @@ stream = ExtResource( 8 )
 stream = ExtResource( 10 )
 
 [connection signal="pressed" from="SoundButton" to="." method="_on_SoundButton_pressed"]
-[connection signal="pressed" from="LanguageButton" to="." method="_on_LanguageButton_pressed"]
